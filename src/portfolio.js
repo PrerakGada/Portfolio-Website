@@ -38,7 +38,7 @@ const socialMediaLinks = {
   gmail: "prerakgada07@gmail.com",
   gitlab: "https://gitlab.com/prerakgada07",
   facebook: "https://www.facebook.com/prerak.gada.7",
-  medium: "https://medium.com/@prerakgada",
+  medium: "https://medium.com/@prerakgada07",
   stackoverflow: "https://stackoverflow.com/users/12530978/prerak",
   twitter: "https://twitter.com/prerak_gada",
   instagram: "https://www.instagram.com/prerakgada/",
@@ -129,7 +129,7 @@ const educationInfo = {
   schools: [
     {
       schoolName: "Atharva College of Engineering | University of Mumbai",
-      logo: require("./assets/images/harvardLogo.png"),
+      logo: require("./assets/images/ace.jpeg"),
       subHeader: "Bachelor of Engineering in Electronics and Computer Science",
       duration: "October 2022 - Present",
       desc: "Participated in the research of XXX and published 3 papers.",
@@ -140,7 +140,7 @@ const educationInfo = {
     },
     {
       schoolName: "Shri Bhagubhai Mafatlal Polytechnic",
-      logo: require("./assets/images/stanfordLogo.png"),
+      logo: require("./assets/images/sbmp.jpeg"),
       subHeader: "Diploma in Computer Science Engineering",
       duration: "August 2019 - July 2022",
       desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
@@ -178,7 +178,7 @@ const workExperiences = {
     {
       role: "IoT Systems Developer Intern",
       company: "ExperientialEtc",
-      companylogo: require("./assets/images/facebookLogo.png"),
+      companylogo: require("./assets/images/expetc.jpeg"),
       date: "April 2023 – Present",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
@@ -186,18 +186,19 @@ const workExperiences = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
       ]
     },
-    {
-      role: "Fullstack Developer",
-      company: "Netaji",
-      companylogo: require("./assets/images/quoraLogo.png"),
-      date: "June 2023 – October 2023",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
+
     {
       role: "Flutter Developer Lead",
       company: "CitJo",
-      companylogo: require("./assets/images/airbnbLogo.png"),
+      companylogo: require("./assets/images/citjo.png"),
       date: "April 2022 – Sep 2022",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      role: "Fullstack Developer",
+      company: "hungry brain",
+      companylogo: require("./assets/images/hb.jpg"),
+      date: "June 2023 – October 2023",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
   ]
@@ -241,7 +242,7 @@ const bigProjects = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
@@ -294,7 +295,7 @@ const achievementSection = {
       image: require("./assets/images/pwaLogo.webp"),
       imageAlt: "PWA Logo",
       footerLink: [
-        {name: "Certification", url: ""},
+        { name: "Certification", url: "" },
         {
           name: "Final Project",
           url: "https://pakistan-olx-1.firebaseapp.com/"
