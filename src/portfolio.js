@@ -25,8 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with Flutter  / Reactjs / Nodejs / Django and some other cool libraries and frameworks."
   ),
-  resumeLink:
-    "", // Set to empty to hide the button
+  resumeLink: "", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -132,10 +131,10 @@ const educationInfo = {
       logo: require("./assets/images/ace.jpeg"),
       subHeader: "Bachelor of Engineering in Electronics and Computer Science",
       duration: "October 2022 - Present",
-      desc: "Participated in the research of XXX and published 3 papers.",
+      desc: "IEEE Technical Head",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Led the technical team of 100+ members to organize various technical events under IEEE",
+        "Participated in Technoxian 2023, World's largest Robotics competition held in IIT Delhi"
       ]
     },
     {
@@ -143,8 +142,12 @@ const educationInfo = {
       logo: require("./assets/images/sbmp.jpeg"),
       subHeader: "Diploma in Computer Science Engineering",
       duration: "August 2019 - July 2022",
-      desc: "Ranked top 10% in the program. Took courses about Software Engineering, Web Security, Operating Systems, ...",
-      descBullets: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit"]
+      desc: "Class Representative and SIH Student Coordinator",
+      descBullets: [
+        "Participated in Smart India Hackathon 2022",
+        "Participated in various hackathons and won prizes",
+        "Volunteered at Multicon 2020 Hackathon and other tech events"
+      ]
     }
   ]
 };
@@ -303,7 +306,7 @@ const achievementSection = {
       ]
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Blogs Section
@@ -366,7 +369,7 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+91-9224598850",
+  // number: "+91-9224598850",
   email_address: "prerakgada07@gmail.com"
 };
 
@@ -380,21 +383,7 @@ const twitterDetails = {
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
 
 export {
-  illustration,
-  greeting,
-  socialMediaLinks,
-  splashScreen,
-  skillsSection,
-  educationInfo,
-  techStack,
-  workExperiences,
-  openSource,
-  bigProjects,
-  achievementSection,
-  blogSection,
-  talkSection,
-  podcastSection,
-  contactInfo,
-  twitterDetails,
-  isHireable
+  achievementSection, bigProjects, blogSection, contactInfo, educationInfo, greeting, illustration, isHireable, openSource, podcastSection, skillsSection, socialMediaLinks,
+  splashScreen, talkSection, techStack, twitterDetails, workExperiences
 };
+
