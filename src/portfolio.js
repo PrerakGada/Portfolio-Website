@@ -133,7 +133,9 @@ const educationInfo = {
       duration: "October 2022 - Present",
       desc: "IEEE Technical Head",
       descBullets: [
-        "Led the technical team of 100+ members to organize various technical events under IEEE",
+        "GDSC App Lead and IEEE Techithon Tech Head",
+        "Organised a 24 hour hackathon for 100+ participants for the first time in college's history",
+        "Led the technical team of 100+ members to organize various technical events and projects for the college's annual TechFest",
         "Participated in Technoxian 2023, World's largest Robotics competition held in IIT Delhi"
       ]
     },
@@ -183,10 +185,10 @@ const workExperiences = {
       company: "ExperientialEtc",
       companylogo: require("./assets/images/expetc.jpeg"),
       date: "April 2023 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      desc: "Working on IoT based projects using Arduino, Raspberry Pi and other microcontrollers",
       descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "Developing IoT based projects for clients",
+        "Customising exisiting IoT products and replacing their controllers with our own"
       ]
     },
 
@@ -195,14 +197,24 @@ const workExperiences = {
       company: "CitJo",
       companylogo: require("./assets/images/citjo.png"),
       date: "April 2022 – Sep 2022",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      desc: "Developing a mobile application for a startup using Flutter and AWS",
+      descBullets: [
+        "Learning and implementing Flutter and AWS on a live project",
+        "Leading a team of developer interns and designers to develop the application",
+        "Exploring the market of mobile applications and Flutter"
+      ]
     },
     {
-      role: "Fullstack Developer",
+      role: "Shopify Developer",
       company: "hungry brain",
       companylogo: require("./assets/images/hb.jpg"),
       date: "June 2023 – October 2023",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      desc: "Developing and maintaiing a Shopify e-commerce website",
+      descBullets: [
+        "Learning liquid and other Shopify technologies",
+        "Working on a live project",
+        "Exploring the market of e-commerce and Shopify"
+      ]
     }
   ]
 };
@@ -306,7 +318,7 @@ const achievementSection = {
       ]
     }
   ],
-  display: true // Set false to hide this section, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Blogs Section
@@ -369,15 +381,15 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  // number: "+91-9224598850",
-  email_address: "prerakgada07@gmail.com"
+  number: "+91-9224598850",
+  email_address: "mail@prerakgada.in"
 };
 
 // Twitter Section
 
 const twitterDetails = {
   userName: "prerak_gada", //Replace "twitter" with your twitter username without @
-  display: true // Set true to display this section, defaults to false
+  display: false // Set true to display this section, defaults to false
 };
 
 const isHireable = false; // Set false if you are not looking for a job. Also isHireable will be display as Open for opportunities: Yes/No in the GitHub footer
