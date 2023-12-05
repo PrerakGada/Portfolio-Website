@@ -24,6 +24,7 @@ export default function Talks() {
           >
             {talkSection.subtitle}
           </p>
+          <div className="talk-container">
           {talkSection.talks.map((talk, i) => {
             return (
               <TalkCard
@@ -39,6 +40,7 @@ export default function Talks() {
               />
             );
           })}
+          </div>
         </div>
       </div>
     </Fade>

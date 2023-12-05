@@ -25,7 +25,7 @@ const greeting = {
   subTitle: emoji(
     "A passionate Full Stack Software Developer 🚀 having an experience of building Web and Mobile applications with Flutter  / Reactjs / Nodejs / Django and some other cool libraries and frameworks."
   ),
-  resumeLink: "", // Set to empty to hide the button
+  resumeLink: "https://prerakgada.in/resume.pdf", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -33,14 +33,14 @@ const greeting = {
 
 const socialMediaLinks = {
   github: "https://github.com/PrerakGada",
-  linkedin: "https://www.linkedin.com/in/prerak-gada-54a986199/",
-  gmail: "prerakgada07@gmail.com",
-  gitlab: "https://gitlab.com/prerakgada07",
-  facebook: "https://www.facebook.com/prerak.gada.7",
-  medium: "https://medium.com/@prerakgada07",
-  stackoverflow: "https://stackoverflow.com/users/12530978/prerak",
-  twitter: "https://twitter.com/prerak_gada",
-  instagram: "https://www.instagram.com/prerakgada/",
+  linkedin: "https://www.linkedin.com/in/prerakgada/",
+  gmail: "mail@prerakgada.in",
+  // gitlab: "https://gitlab.com/prerakgada07",
+  // facebook: "https://www.facebook.com/prerak.gada.7",
+  medium: "https://medium.com/@prerakgada",
+  // stackoverflow: "https://stackoverflow.com/users/12530978/prerak",
+  twitter: "https://twitter.com/prerakgada",
+  instagram: "https://www.instagram.com/prerakgada",
   // Instagram, Twitter and Kaggle are also supported in the links!
   // To customize icons and social links, tweak src/components/SocialMedia
   display: true // Set true to display this section, defaults to false
@@ -65,6 +65,11 @@ const skillsSection = {
 https://fontawesome.com/icons?d=gallery */
 
   softwareSkills: [
+    // {
+    //   skillName: "Flutter",
+    //   fontAwesomeClassname: "./assets/skills/flutter.svg",
+    //   logo: require("./assets/skills/flutter.svg")
+    // },
     {
       skillName: "html-5",
       fontAwesomeClassname: "fab fa-html5"
@@ -127,11 +132,11 @@ const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
     {
-      schoolName: "Atharva College of Engineering | University of Mumbai",
+      schoolName: "University of Mumbai",
       logo: require("./assets/images/ace.jpeg"),
-      subHeader: "Bachelor of Engineering in Electronics and Computer Science",
+      subHeader: "B.E. in Electronics and Computer Science",
       duration: "October 2022 - Present",
-      desc: "IEEE Technical Head",
+      desc: "",
       descBullets: [
         "GDSC App Lead and IEEE Techithon Tech Head",
         "Organised a 24 hour hackathon for 100+ participants for the first time in college's history",
@@ -157,7 +162,7 @@ const educationInfo = {
 // Your top 3 proficient stacks/tech experience
 
 const techStack = {
-  viewSkillBars: true, //Set it to true to show Proficiency Section
+  viewSkillBars: false, //Set it to true to show Proficiency Section
   experience: [
     {
       Stack: "Frontend/Design", //Insert stack or technology you have experience in
@@ -181,10 +186,46 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
+      role: "Software Development Freelancer",
+      company: "Freelancing",
+      companylogo: require("./assets/images/freelancer.jpeg"),
+      date: "June 2023 – Present",
+      desc: "Developing Full Stack Web and Mobile Applications for clients",
+      descBullets: [
+        "Managing Client Relations",
+        "Developing and Maintaining Web and Mobile Applications",
+        "Working on a variety of projects using different technologies",
+      ]
+    },
+    {
+      role: "Google Developer Student Club",
+      company: "App Lead",
+      companylogo: require("./assets/images/gdsc.png"),
+      date: "Aug 2023 – Present",
+      desc: "Leading a team of flutter developers to develop robust mobile application projects for the community",
+      descBullets: [
+        "Teaching and guiding the team of student developers",
+        "Taking sessions on various topics related to flutter and mobile application development",
+        "Organising events and workshops for the community",
+      ]
+    },
+    {
+      role: "IEEE Techithon 2023",
+      company: "Techinical Head",
+      companylogo: require("./assets/images/ieee-logo.jpeg"),
+      date: "Aug 2023 – Present",
+      desc: "Leading the technical team of 100+ members to organize various technical events and projects for the college's annual TechFest",
+      descBullets: [
+        "Organising a 24 hour hackathon for 150+ participants for the first time in college's history",
+        "Making 10+ Hardware/Software projects for the college's annual TechFest",
+        "Managing the technical team and guiding them to make projects and organize events",
+      ]
+    },
+    {
       role: "IoT Systems Developer Intern",
       company: "ExperientialEtc",
       companylogo: require("./assets/images/expetc.jpeg"),
-      date: "April 2023 – Present",
+      date: "April 2023 – Sep 2023",
       desc: "Working on IoT based projects using Arduino, Raspberry Pi and other microcontrollers",
       descBullets: [
         "Developing IoT based projects for clients",
@@ -205,15 +246,16 @@ const workExperiences = {
       ]
     },
     {
-      role: "Shopify Developer",
+      role: "Business Operations and Digital Marketing Specialist",
       company: "hungry brain",
       companylogo: require("./assets/images/hb.jpg"),
-      date: "June 2023 – October 2023",
-      desc: "Developing and maintaiing a Shopify e-commerce website",
+      date: "June 2020 – Present",
+      desc: "Fueling the success of our family-owned company through innovative digital strategies and operational excellence.",
       descBullets: [
-        "Learning liquid and other Shopify technologies",
-        "Working on a live project",
-        "Exploring the market of e-commerce and Shopify"
+        "Managing the company's social media accounts and website",
+        "Developing and implementing digital marketing strategies",
+        "Managing the company's operations and customer relations",
+        "Learning about business operations and product development",
       ]
     }
   ]
@@ -223,8 +265,8 @@ const workExperiences = {
 To know how to get github key look at readme.md */
 
 const openSource = {
-  showGithubProfile: "true", // Set true or false to show Contact profile using Github, defaults to true
-  display: true // Set false to hide this section, defaults to true
+  showGithubProfile: "false", // Set true or false to show Contact profile using Github, defaults to true
+  display: false // Set false to hide this section, defaults to true
 };
 
 // Some big projects you have worked on
@@ -234,30 +276,30 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("./assets/images/saayaHealthLogo.webp"),
-      projectName: "Saayahealth",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/boult.png"),
+      projectName: "Boult Audio",
+      projectDesc: "All in one Fitness Smart Watch App for India's fastest growing wearable brand",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://saayahealth.com/"
+          url: "http://boultaudio.com/"
         }
         //  you can add extra buttons here.
       ]
     },
     {
-      image: require("./assets/images/nextuLogo.webp"),
-      projectName: "Nextu",
-      projectDesc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      image: require("./assets/images/netajiapp.jpeg"),
+      projectName: "Netaji: Political Poster Maker App",
+      projectDesc: "Netaji Political Poster Maker helps you to create eye-catching festival poster maker, festival banners, or political campaign materials, all at one place",
       footerLink: [
         {
           name: "Visit Website",
-          url: "http://nextu.se/"
+          url: "http://netajiapp.com/"
         }
       ]
     }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Achievement Section
@@ -270,55 +312,69 @@ const achievementSection = {
 
   achievementsCards: [
     {
-      title: "Google Code-In Finalist",
+      title: "Winner of KJSCE Hacks 7.0",
       subtitle:
-        "First Pakistani to be selected as Google Code-in Finalist from 4000 students from 77 different countries.",
-      image: require("./assets/images/codeInLogo.webp"),
-      imageAlt: "Google Code-In Logo",
+        "1st place at KJSCE Hacks 7.0, 24-hour hackathon conducted by K.J. Somaiya College of Engineering on 1st-2nd April 2023",
+      image: require("./assets/certificates/kjsce.jpeg"),
+      imageAlt: "Prerak Gada KJSCE Hacks 7.0 Certificate",
       footerLink: [
-        {
-          name: "Certification",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dYkVvNjdNWjNybWJrbndFSHpNY2NFV1p4YmU0/view?usp=sharing"
-        },
-        {
-          name: "Award Letter",
-          url: "https://drive.google.com/file/d/0B7kazrtMwm5dekxBTW5hQkg2WXUyR3QzQmR0VERiLXlGRVdF/view?usp=sharing"
-        },
-        {
-          name: "Google Code-in Blog",
-          url: "https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html"
-        }
+        // {
+        //   name: "View Google Assistant Action",
+        //   url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
+        // }
       ]
     },
     {
-      title: "Google Assistant Action",
+      title: "Winner of Unscript Rookies Hackathon",
       subtitle:
-        "Developed a Google Assistant Action JavaScript Guru that is available on 2 Billion devices world wide.",
-      image: require("./assets/images/googleAssistantLogo.webp"),
-      imageAlt: "Google Assistant Action Logo",
+        "1st place in App Domain of Unscript Rookie's Hackathon 2023 Organised By Fr. Conceicao Rodrigues College Of Engineering On 11th-12th February 2023.",
+      image: require("./assets/certificates/unscript_rookies.png"),
+      imageAlt: "Prerak Gada Unscript Rookies Hackathon Certificate",
+      footerLink: [
+      ]
+    },
+    {
+      title: "Runner Up of S.P.I.T. Hackathon 2023 ",
+      subtitle: "2nd place at S.P.I.T. Hackathon 2023, 24-hour hackathon conducted by Sardar Patel Institute of Technology on 4th-5th February 2023",
+      image: require("./assets/certificates/spit.png"),
+      imageAlt: "Prerak Gada S.P.I.T. Hackathon Certificate",
+      footerLink: [
+        // { name: "Certification", url: "" },
+        // {
+        //   name: "Final Project",
+        //   url: "https://pakistan-olx-1.firebaseapp.com/"
+        // }
+      ]
+    },
+    {
+      title: "Runner Up of LOC 4.0 Hackathon",
+      subtitle:
+        "2nd place at LOC 4.0, 24-hour hackathon conducted by DJSCE ACM Student Chapter on 12th-13th March 2022",
+      image: require("./assets/certificates/loc4.png"),
+      imageAlt: "Prerak Gada LOC 4.0 Certificate",
+      footerLink: [
+        // {
+        //   name: "View Google Assistant Action",
+        //   url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
+        // }
+      ]
+    },
+    {
+      title: "Paper Publication: Fundamentals of IoT",
+      subtitle:
+        "Published a research paper on Fundamentals of IoT (Internet of Things) in International Journal of Innovative Research in Computer Science and Engineering (IJIRCSE)",
+      image: require("./assets/certificates/iot_paper.png"),
+      imageAlt: "Prerak Gada IoT Paper Publication Certificate",
       footerLink: [
         {
-          name: "View Google Assistant Action",
-          url: "https://assistant.google.com/services/a/uid/000000100ee688ee?hl=en"
+          name: "View Paper Abstract",
+          url: "https://ijarsct.co.in/A2201.pdf"
         }
       ]
     },
 
-    {
-      title: "PWA Web App Developer",
-      subtitle: "Completed Certifcation from SMIT for PWA Web App Development",
-      image: require("./assets/images/pwaLogo.webp"),
-      imageAlt: "PWA Logo",
-      footerLink: [
-        { name: "Certification", url: "" },
-        {
-          name: "Final Project",
-          url: "https://pakistan-olx-1.firebaseapp.com/"
-        }
-      ]
-    }
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Blogs Section
@@ -355,13 +411,37 @@ const talkSection = {
 
   talks: [
     {
-      title: "Build Actions For Google Assistant",
-      subtitle: "Codelab at GDG DevFest Karachi 2019",
-      slides_url: "https://bit.ly/saadpasta-slides",
-      event_url: "https://www.facebook.com/events/2339906106275053/"
-    }
+      title: "Workshop on Flutter App Development",
+      subtitle: "Hands on workshop on Flutter App Development from scratch",
+      slides_url: "https://prerakgada.in/flutter.pdf",
+      // event_url: ""
+    },
+    {
+      title: "Freelancing from Scratch",
+      subtitle: "Session on Freelancing and how to get started with it",
+      slides_url: "https://prerakgada.in/freelance.pdf",
+      // event_url: ""
+    },
+    {
+      title: "Exploring Computer Science Domains",
+      subtitle: "Session on Computer Science Essential Domains and Subjects for FE and SE students",
+      slides_url: "https://prerakgada.in/explore.pdf",
+      event_url: "https://gdsc.community.dev/events/details/developer-student-clubs-atharva-college-of-engineering-mumbai-presents-session-on-1-computer-science-essentials-2-freelancing-in-web-and-the-future-of-startups/"
+    },
+    {
+      title: "Foundations and Beyound",
+      subtitle: "Workshop on Computer Science Essential Domains and Subjects for TE and BE students",
+      slides_url: "https://prerakgada.in/explore.pdf",
+      event_url: "https://atharvacoe.ac.in/wp-content/uploads/ECS-Dept-workshop-Report-23-08-2023.pdf"
+    },
+    {
+      title: "Workshop on Django REST Framework",
+      subtitle: "Session on Django REST Framework for Diploma students",
+      slides_url: "https://prerakgada.in/django.pdf",
+      // event_url: ""
+    },
   ],
-  display: false // Set false to hide this section, defaults to true
+  display: true // Set false to hide this section, defaults to true
 };
 
 // Podcast Section
@@ -388,7 +468,7 @@ const contactInfo = {
 // Twitter Section
 
 const twitterDetails = {
-  userName: "prerak_gada", //Replace "twitter" with your twitter username without @
+  userName: "prerakgada", //Replace "twitter" with your twitter username without @
   display: false // Set true to display this section, defaults to false
 };
 

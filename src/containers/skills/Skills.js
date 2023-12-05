@@ -1,14 +1,14 @@
-import React, {useContext} from "react";
-import "./Skills.scss";
-import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
-import {illustration, skillsSection} from "../../portfolio";
-import {Fade} from "react-reveal";
+import React, { useContext } from "react";
+import { Fade } from "react-reveal";
 import codingPerson from "../../assets/lottie/codingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
+import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import StyleContext from "../../contexts/StyleContext";
+import { illustration, skillsSection } from "../../portfolio";
+import "./Skills.scss";
 
 export default function Skills() {
-  const {isDark} = useContext(StyleContext);
+  const { isDark } = useContext(StyleContext);
   if (!skillsSection.display) {
     return null;
   }
@@ -43,7 +43,7 @@ export default function Skills() {
             >
               {skillsSection.subTitle}
             </p>
-            <SoftwareSkill />
+            <SoftwareSkill />   
             <div>
               {skillsSection.skills.map((skills, i) => {
                 return (

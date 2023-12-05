@@ -1,6 +1,7 @@
 import React from "react";
+import { skillsSection } from "../../portfolio";
 import "./SoftwareSkill.scss";
-import {skillsSection} from "../../portfolio";
+import skillSvg from "../../assets/skills/flutter.svg";
 
 export default function SoftwareSkill() {
   return (
@@ -15,6 +16,7 @@ export default function SoftwareSkill() {
                 name={skills.skillName}
               >
                 <i className={skills.fontAwesomeClassname}></i>
+                {/* <img src={skills.logo} alt={skills.skillName} width={24}/> */}
                 <p>{skills.skillName}</p>
               </li>
             );

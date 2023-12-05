@@ -3,7 +3,7 @@ import "./TalkCard.scss";
 
 export default function TalkCard({talkDetails}) {
   return (
-    <div>
+    <div className="talk-card-container">
       <div className="container">
         <div
           className={
