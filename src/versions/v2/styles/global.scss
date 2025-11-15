@@ -1,0 +1,311 @@
+/**
+ * V2 Global Styles
+ * Applied to entire v2 application
+ */
+
+@import './variables';
+
+// ==================== RESET & BASE ====================
+
+.v2-app {
+  font-family: $v2-font-primary;
+  font-size: $v2-text-base;
+  line-height: $v2-leading-normal;
+  color: $v2-text-primary;
+  background-color: $v2-background-light;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ==================== TYPOGRAPHY ====================
+
+.v2-app {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $v2-font-heading;
+    font-weight: $v2-font-bold;
+    line-height: $v2-leading-tight;
+    color: $v2-text-primary;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: $v2-text-6xl;
+
+    @media (max-width: $v2-breakpoint-md) {
+      font-size: $v2-text-4xl;
+    }
+  }
+
+  h2 {
+    font-size: $v2-text-5xl;
+
+    @media (max-width: $v2-breakpoint-md) {
+      font-size: $v2-text-3xl;
+    }
+  }
+
+  h3 {
+    font-size: $v2-text-4xl;
+
+    @media (max-width: $v2-breakpoint-md) {
+      font-size: $v2-text-2xl;
+    }
+  }
+
+  h4 {
+    font-size: $v2-text-3xl;
+  }
+
+  h5 {
+    font-size: $v2-text-2xl;
+  }
+
+  h6 {
+    font-size: $v2-text-xl;
+  }
+
+  p {
+    margin: 0 0 $v2-spacing-4;
+    line-height: $v2-leading-relaxed;
+  }
+
+  a {
+    color: $v2-accent;
+    text-decoration: none;
+    transition: color $v2-transition-base;
+
+    &:hover {
+      color: $v2-accent-hover;
+    }
+  }
+
+  strong {
+    font-weight: $v2-font-bold;
+  }
+
+  .text-accent {
+    color: $v2-accent;
+  }
+}
+
+// ==================== CONTAINERS ====================
+
+.v2-container {
+  width: 100%;
+  max-width: $v2-container-xl;
+  margin: 0 auto;
+  padding: 0 $v2-spacing-6;
+
+  @media (max-width: $v2-breakpoint-md) {
+    padding: 0 $v2-spacing-4;
+  }
+}
+
+.v2-container-wide {
+  width: 100%;
+  max-width: $v2-container-2xl;
+  margin: 0 auto;
+  padding: 0 $v2-spacing-8;
+
+  @media (max-width: $v2-breakpoint-md) {
+    padding: 0 $v2-spacing-4;
+  }
+}
+
+// ==================== SECTIONS ====================
+
+.v2-section {
+  padding: $v2-spacing-20 0;
+
+  @media (max-width: $v2-breakpoint-md) {
+    padding: $v2-spacing-12 0;
+  }
+}
+
+.v2-section-dark {
+  background-color: $v2-background-dark;
+  color: $v2-text-on-dark;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $v2-text-on-dark;
+  }
+}
+
+// ==================== BUTTONS ====================
+
+.v2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $v2-spacing-3 $v2-spacing-6;
+  font-size: $v2-text-base;
+  font-weight: $v2-font-semibold;
+  line-height: 1;
+  border-radius: $v2-border-radius;
+  border: none;
+  cursor: pointer;
+  transition: all $v2-transition-base;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.v2-btn-primary {
+  background-color: $v2-accent;
+  color: $v2-white;
+  box-shadow: $v2-shadow;
+
+  &:hover:not(:disabled) {
+    background-color: $v2-accent-hover;
+    box-shadow: $v2-shadow-md;
+    transform: translateY(-2px);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+}
+
+.v2-btn-secondary {
+  background-color: transparent;
+  color: $v2-accent;
+  border: $v2-border-width-2 solid $v2-accent;
+
+  &:hover:not(:disabled) {
+    background-color: $v2-accent-light;
+  }
+}
+
+.v2-btn-lg {
+  padding: $v2-spacing-4 $v2-spacing-8;
+  font-size: $v2-text-lg;
+}
+
+.v2-btn-sm {
+  padding: $v2-spacing-2 $v2-spacing-4;
+  font-size: $v2-text-sm;
+}
+
+// ==================== CARDS ====================
+
+.v2-card {
+  background-color: $v2-white;
+  border-radius: $v2-border-radius-lg;
+  padding: $v2-spacing-6;
+  box-shadow: $v2-shadow;
+  transition: all $v2-transition-base;
+
+  &:hover {
+    box-shadow: $v2-shadow-lg;
+    transform: translateY(-4px);
+  }
+}
+
+// ==================== BADGES ====================
+
+.v2-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $v2-spacing-2 $v2-spacing-4;
+  background-color: $v2-accent-light;
+  color: $v2-accent;
+  border-radius: $v2-border-radius-full;
+  font-size: $v2-text-sm;
+  font-weight: $v2-font-medium;
+}
+
+// ==================== GRID ====================
+
+.v2-grid {
+  display: grid;
+  gap: $v2-spacing-6;
+}
+
+.v2-grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $v2-breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.v2-grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $v2-breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $v2-breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ==================== UTILITIES ====================
+
+.v2-text-center {
+  text-align: center;
+}
+
+.v2-text-gradient {
+  background: $v2-gradient-orange;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.v2-mt-0 { margin-top: 0; }
+.v2-mt-4 { margin-top: $v2-spacing-4; }
+.v2-mt-8 { margin-top: $v2-spacing-8; }
+.v2-mb-0 { margin-bottom: 0; }
+.v2-mb-4 { margin-bottom: $v2-spacing-4; }
+.v2-mb-8 { margin-bottom: $v2-spacing-8; }
+
+// ==================== ANIMATIONS ====================
+
+@keyframes v2-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes v2-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes v2-slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.v2-animate-fadeIn {
+  animation: v2-fadeIn 0.6s ease-out;
+}
+
+.v2-animate-fadeInUp {
+  animation: v2-fadeInUp 0.6s ease-out;
+}
+
+.v2-animate-slideInRight {
+  animation: v2-slideInRight 0.6s ease-out;
+}

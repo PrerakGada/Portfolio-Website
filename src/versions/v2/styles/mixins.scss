@@ -1,0 +1,226 @@
+/**
+ * V2 SCSS Mixins
+ * Reusable style patterns
+ */
+
+@import './variables';
+
+// ==================== RESPONSIVE ====================
+
+@mixin v2-respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (max-width: $v2-breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (max-width: $v2-breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: $v2-breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (max-width: $v2-breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// ==================== FLEXBOX ====================
+
+@mixin v2-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin v2-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin v2-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// ==================== POSITIONING ====================
+
+@mixin v2-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin v2-absolute-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// ==================== TEXT ====================
+
+@mixin v2-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin v2-line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ==================== BACKGROUNDS ====================
+
+@mixin v2-gradient-overlay($color, $opacity: 0.8) {
+  position: relative;
+
+  &::after {
+    content: '';
+    @include v2-absolute-fill;
+    background: linear-gradient(135deg, rgba($color, $opacity) 0%, rgba($color, $opacity * 0.6) 100%);
+    z-index: 1;
+  }
+}
+
+@mixin v2-orange-circle-bg {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: $v2-gradient-orange;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: -1;
+  }
+}
+
+// ==================== HOVER EFFECTS ====================
+
+@mixin v2-hover-lift {
+  transition: all $v2-transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $v2-shadow-lg;
+  }
+}
+
+@mixin v2-hover-scale {
+  transition: transform $v2-transition-base;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// ==================== BUTTONS ====================
+
+@mixin v2-button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $v2-spacing-3 $v2-spacing-6;
+  font-size: $v2-text-base;
+  font-weight: $v2-font-semibold;
+  border-radius: $v2-border-radius;
+  border: none;
+  cursor: pointer;
+  transition: all $v2-transition-base;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// ==================== CARDS ====================
+
+@mixin v2-card {
+  background-color: $v2-white;
+  border-radius: $v2-border-radius-lg;
+  padding: $v2-spacing-6;
+  box-shadow: $v2-shadow;
+  @include v2-hover-lift;
+}
+
+// ==================== SECTIONS ====================
+
+@mixin v2-section-padding {
+  padding: $v2-spacing-20 0;
+
+  @include v2-respond-to('md') {
+    padding: $v2-spacing-12 0;
+  }
+}
+
+@mixin v2-section-heading {
+  font-size: $v2-text-5xl;
+  font-weight: $v2-font-bold;
+  text-align: center;
+  margin-bottom: $v2-spacing-12;
+
+  @include v2-respond-to('md') {
+    font-size: $v2-text-3xl;
+    margin-bottom: $v2-spacing-8;
+  }
+}
+
+// ==================== ANIMATIONS ====================
+
+@mixin v2-fade-in($duration: 0.6s) {
+  animation: v2-fadeIn $duration ease-out;
+}
+
+@mixin v2-slide-in($direction: 'up', $duration: 0.6s) {
+  @if $direction == 'up' {
+    animation: v2-fadeInUp $duration ease-out;
+  } @else if $direction == 'right' {
+    animation: v2-slideInRight $duration ease-out;
+  }
+}
+
+// ==================== UTILITIES ====================
+
+@mixin v2-container {
+  width: 100%;
+  max-width: $v2-container-xl;
+  margin: 0 auto;
+  padding: 0 $v2-spacing-6;
+
+  @include v2-respond-to('md') {
+    padding: 0 $v2-spacing-4;
+  }
+}
+
+@mixin v2-clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin v2-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

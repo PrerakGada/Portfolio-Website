@@ -1,45 +1,55 @@
 import React from "react";
 import "./Main.scss";
+import Header from "../components/Header/Header";
+import Hero from "../components/Hero/Hero";
 
 /**
- * Version 2 - Modern Portfolio Design
+ * Version 2 - Modern Portfolio Design (Figma)
  *
- * This is a placeholder for your new Figma-based design.
- * Replace this component with your actual v2 implementation.
+ * Main layout component for v2
+ * Implements the modern, orange-accented design from Figma
  *
- * You can access shared portfolio data from:
- * import { greeting, workExperiences, etc } from "../../../shared/data/portfolio";
- *
- * You can use shared contexts:
- * import { StyleProvider } from "../../../shared/contexts/StyleContext";
- * import { useLocalStorage } from "../../../shared/hooks/useLocalStorage";
+ * Current Status: Session 1 Complete
+ * - Header ✅
+ * - Hero ✅
+ * - Services (upcoming)
+ * - Experience (upcoming)
+ * - Portfolio (upcoming)
+ * - Footer (upcoming)
  */
 
 const Main = () => {
   return (
-    <div className="v2-container">
-      <div className="v2-content">
-        <h1>Version 2 - Coming Soon</h1>
-        <p>This is a placeholder for your new Figma-based portfolio design.</p>
-        <p>Start building your components here!</p>
+    <div className="v2-app">
+      <Header />
+      <main>
+        <Hero />
 
-        <div className="v2-guide">
-          <h2>Getting Started:</h2>
-          <ul>
-            <li>Create your components in <code>src/versions/v2/components/</code></li>
-            <li>Create your page sections in <code>src/versions/v2/containers/</code></li>
-            <li>Add your styles in <code>src/versions/v2/styles/</code></li>
-            <li>Import shared data from <code>src/shared/data/portfolio.js</code></li>
-            <li>Use shared contexts from <code>src/shared/contexts/</code></li>
-          </ul>
-        </div>
-
-        <div className="v2-navigation">
-          <p>
-            <a href="/v1">← Go to Version 1</a>
-          </p>
-        </div>
-      </div>
+        {/* Coming Soon sections */}
+        <section className="v2-coming-soon">
+          <div className="v2-container">
+            <div className="v2-coming-soon-content">
+              <h2>More Sections Coming Soon</h2>
+              <p>The following sections are in development:</p>
+              <ul>
+                <li>Services Section</li>
+                <li>Work Experience Timeline</li>
+                <li>Why Hire Me</li>
+                <li>Portfolio Gallery</li>
+                <li>Testimonials</li>
+                <li>Blog Posts</li>
+                <li>Footer</li>
+              </ul>
+              <p className="v2-progress-note">
+                Session 1 Complete: Foundation (Header + Hero) ✅
+              </p>
+              <a href="/v1" className="v2-btn v2-btn-secondary">
+                ← View Version 1 (Classic)
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };

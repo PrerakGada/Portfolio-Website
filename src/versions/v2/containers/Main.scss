@@ -1,95 +1,90 @@
-.v2-container {
+/**
+ * V2 Main Container Styles
+ */
+
+@import '../styles/variables';
+@import '../styles/global';
+@import '../styles/mixins';
+
+// ==================== APP CONTAINER ====================
+
+.v2-app {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: $v2-font-primary;
+  color: $v2-text-primary;
+  background-color: $v2-background-light;
 }
 
-.v2-content {
-  max-width: 800px;
-  padding: 3rem;
+main {
+  width: 100%;
+}
+
+// ==================== COMING SOON SECTION ====================
+
+.v2-coming-soon {
+  @include v2-section-padding;
+  background-color: $v2-background-gray;
   text-align: center;
 }
 
-.v2-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
+.v2-coming-soon-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $v2-spacing-12;
+  background-color: $v2-white;
+  border-radius: $v2-border-radius-xl;
+  box-shadow: $v2-shadow-md;
 
-.v2-content > p {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
+  h2 {
+    color: $v2-text-primary;
+    margin-bottom: $v2-spacing-6;
+    font-size: $v2-text-4xl;
 
-.v2-guide {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 2rem 0;
-  text-align: left;
-  backdrop-filter: blur(10px);
-}
-
-.v2-guide h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.v2-guide ul {
-  list-style: none;
-  padding: 0;
-}
-
-.v2-guide li {
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  opacity: 0.95;
-}
-
-.v2-guide code {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-family: "Monaco", "Courier New", monospace;
-  font-size: 0.9rem;
-}
-
-.v2-navigation {
-  margin-top: 2rem;
-}
-
-.v2-navigation a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid white;
-  border-radius: 8px;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.v2-navigation a:hover {
-  background: white;
-  color: #667eea;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .v2-content {
-    padding: 1.5rem;
+    @include v2-respond-to('md') {
+      font-size: $v2-text-3xl;
+    }
   }
 
-  .v2-content h1 {
-    font-size: 2.5rem;
+  p {
+    color: $v2-text-secondary;
+    font-size: $v2-text-lg;
+    margin-bottom: $v2-spacing-6;
   }
 
-  .v2-guide {
-    padding: 1.5rem;
+  ul {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto $v2-spacing-8;
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: $v2-spacing-3;
+      border-left: 3px solid $v2-accent;
+      padding-left: $v2-spacing-4;
+      margin-bottom: $v2-spacing-2;
+      color: $v2-text-secondary;
+      background-color: $v2-accent-light;
+      border-radius: $v2-border-radius-sm;
+
+      &::before {
+        content: '⏳ ';
+        margin-right: $v2-spacing-2;
+      }
+    }
+  }
+
+  .v2-progress-note {
+    font-weight: $v2-font-semibold;
+    color: $v2-accent;
+    background-color: $v2-accent-light;
+    padding: $v2-spacing-4;
+    border-radius: $v2-border-radius;
+    display: inline-block;
+    margin-bottom: $v2-spacing-6;
+  }
+
+  .v2-btn {
+    margin-top: $v2-spacing-4;
   }
 }
