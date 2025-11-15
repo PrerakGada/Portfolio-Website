@@ -461,7 +461,7 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+91-9224598850",
+  // number: "+91-9224598850",
   email_address: "mail@prerakgada.in"
 };
 

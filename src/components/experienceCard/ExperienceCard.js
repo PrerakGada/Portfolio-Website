@@ -7,12 +7,21 @@ export default function ExperienceCard({cardInfo, isDark}) {
   const imgRef = createRef();
 
   function getColorArrays() {
-    const colorThief = new ColorThief();
-    setColorArrays(colorThief.getColor(imgRef.current));
+    try {
+      const colorThief = new ColorThief();
+      if (imgRef.current && imgRef.current.complete) {
+        const colors = colorThief.getColor(imgRef.current);
+        setColorArrays(colors);
+      }
+    } catch (error) {
+      // Fallback color for Safari/iOS compatibility
+      console.warn("ColorThief failed, using fallback color:", error);
+      setColorArrays([40, 44, 52]); // Default dark blue-gray color
+    }
   }
 
   function rgb(values) {
-    return typeof values === "undefined"
+    return typeof values === "undefined" || values.length === 0
       ? null
       : "rgb(" + values.join(", ") + ")";
   }
@@ -39,12 +48,15 @@ export default function ExperienceCard({cardInfo, isDark}) {
         </div>
 
         <img
-          crossOrigin={"anonymous"}
           ref={imgRef}
           className="experience-roundedimg"
           src={cardInfo.companylogo}
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
+          onError={(e) => {
+            console.warn("Image failed to load:", cardInfo.company);
+            setColorArrays([40, 44, 52]); // Fallback color
+          }}
         />
       </div>
       <div className="experience-text-details">
