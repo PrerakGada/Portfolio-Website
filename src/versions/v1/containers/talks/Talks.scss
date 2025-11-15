@@ -1,0 +1,36 @@
+@import "../../../../_globalColor";
+
+.talk-header-title {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 0px;
+}
+
+.talk-cards-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem 1rem;
+}
+
+.subTitle {
+  color: $subTitle;
+}
+
+.talk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 1rem 1rem;
+  gap: 1rem 3rem;
+}
+
+@media (max-width: 768px) {
+  .talk-header-title {
+    font-size: 26px;
+    text-align: center;
+  }
+  .talk-header-subtitle {
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+  }
+}

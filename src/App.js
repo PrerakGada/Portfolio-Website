@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.scss";
-import Main from "./containers/Main";
+import VersionRouter from "./routes/VersionRouter";
 
 function App() {
   return (
     <div>
-      <Main />
+      <VersionRouter />
     </div>
   );
 }
