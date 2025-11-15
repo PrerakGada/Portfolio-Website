@@ -1,7 +1,5 @@
-import React from "react";
 import { skillsSection } from "../../portfolio";
 import "./SoftwareSkill.scss";
-import skillSvg from "../../assets/skills/flutter.svg";
 
 export default function SoftwareSkill() {
   return (
