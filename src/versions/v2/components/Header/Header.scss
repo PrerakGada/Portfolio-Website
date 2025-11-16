@@ -1,0 +1,142 @@
+@import '../../styles/variables';
+
+.v2-header {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $z-index-header;
+  width: 90%;
+  max-width: 1280px;
+
+  @media (max-width: $breakpoint-tablet) {
+    top: 16px;
+    width: 95%;
+  }
+}
+
+.v2-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $primary-dark;
+  border-radius: $radius-full;
+  padding: 12px 24px;
+  box-shadow: $shadow-xl;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 8px 16px;
+  }
+
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+}
+
+.v2-nav-left,
+.v2-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: 8px;
+  }
+
+  @media (max-width: 640px) {
+    flex: 1;
+    justify-content: center;
+    order: 2;
+    width: 100%;
+  }
+}
+
+.v2-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+
+  @media (max-width: 640px) {
+    order: 1;
+    margin-bottom: 8px;
+  }
+}
+
+.v2-logo-icon {
+  width: 48px;
+  height: 48px;
+  background-color: $primary-orange;
+  border-radius: $radius-circle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.v2-logo-text {
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  color: $text-light;
+  letter-spacing: 0.5px;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 16px;
+  }
+}
+
+.v2-logo-name {
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  color: $text-light;
+  letter-spacing: 1px;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 640px) {
+    font-size: 18px;
+  }
+}
+
+.v2-nav-item {
+  padding: 12px 24px;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $text-light;
+  background-color: transparent;
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  cursor: pointer;
+  white-space: nowrap;
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 10px 20px;
+    font-size: $font-size-sm;
+  }
+
+  @media (max-width: 640px) {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  &:hover {
+    background-color: rgba($primary-orange, 0.1);
+  }
+
+  &.active {
+    background-color: $primary-orange;
+    color: $text-light;
+    box-shadow: 0 4px 12px rgba($primary-orange, 0.4);
+  }
+}

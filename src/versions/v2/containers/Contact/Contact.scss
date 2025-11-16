@@ -1,0 +1,120 @@
+@import '../../styles/variables';
+
+.v2-contact {
+  background-color: $bg-white;
+}
+
+.v2-contact-title {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $text-dark;
+  margin-bottom: $spacing-xxl;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: $font-size-3xl;
+    margin-bottom: $spacing-xl;
+  }
+
+  @media (max-width: 640px) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.v2-contact-form {
+  max-width: 800px;
+  margin: 0 auto $spacing-xl;
+}
+
+.v2-form-group {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  background-color: $bg-white;
+  border: 2px solid $border-light;
+  border-radius: $radius-full;
+  padding: 8px 8px 8px 24px;
+  box-shadow: $shadow-md;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+}
+
+.v2-input-icon {
+  flex-shrink: 0;
+
+  svg {
+    display: block;
+  }
+}
+
+.v2-email-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: $font-size-base;
+  padding: 12px;
+  background: transparent;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+    padding: 8px;
+  }
+
+  &::placeholder {
+    color: $text-muted;
+  }
+}
+
+.v2-send-btn {
+  background-color: $primary-orange;
+  color: $text-light;
+  padding: 16px 48px;
+  border-radius: $radius-full;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  @media (max-width: $breakpoint-tablet) {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: darken($primary-orange, 8%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba($primary-orange, 0.4);
+  }
+}
+
+.v2-contact-badges {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-xl;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-tablet) {
+    gap: $spacing-lg;
+  }
+}
+
+.v2-badge {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-base;
+  color: $text-dark;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: $font-size-sm;
+  }
+}
+
+.v2-badge-icon {
+  font-size: $font-size-xl;
+}
+
+.v2-badge-text {
+  font-weight: $font-weight-medium;
+}
