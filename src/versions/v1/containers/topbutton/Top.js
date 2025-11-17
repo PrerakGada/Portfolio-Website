@@ -1,5 +1,4 @@
 import React from "react";
-import "./Top.scss";
 
 export default function Top() {
   function TopEvent() {
@@ -25,7 +24,7 @@ export default function Top() {
   }; //To make sure that this button is not visible at starting.
   // When the user clicks on the button, scroll to the top of the document
   return (
-    <button onClick={TopEvent} id="topButton" title="Go to top">
+    <button onClick={TopEvent} id="topButton" title="Go to top" className="invisible fixed bottom-5 right-[30px] z-[99] border-none outline-none bg-button-primary text-white cursor-pointer p-[15px] rounded-[15px] text-[25px] hover:bg-button-top-hover transition-all ease-in-out duration-200">
       <i className="fas fa-hand-point-up" aria-hidden="true"></i>
     </button>
   );

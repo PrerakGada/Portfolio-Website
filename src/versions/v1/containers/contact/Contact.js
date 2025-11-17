@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./Contact.scss";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {illustration, contactInfo} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -11,28 +10,28 @@ export default function Contact() {
   const {isDark} = useContext(StyleContext);
   return (
     <Fade bottom duration={1000} distance="20px">
-      <div className="main contact-margin-top" id="contact">
-        <div className="contact-div-main">
-          <div className="contact-header">
-            <h1 className="heading contact-title">{contactInfo.title}</h1>
+      <div className="main mt-16" id="contact">
+        <div className="flex">
+          <div className="contact-header flex-1">
+            <h1 className="heading text-[65px] max-[1380px]:text-[56px] max-md:text-[40px] max-md:text-center font-regular">{contactInfo.title}</h1>
             <p
               className={
                 isDark
-                  ? "dark-mode contact-subtitle"
-                  : "subTitle contact-subtitle"
+                  ? "dark-mode uppercase max-md:text-base max-md:leading-normal max-md:text-center"
+                  : "text-text-subtitle uppercase max-md:text-base max-md:leading-normal max-md:text-center"
               }
             >
               {contactInfo.subtitle}
             </p>
             <div
               className={
-                isDark ? "dark-mode contact-text-div" : "contact-text-div"
+                isDark ? "dark-mode mt-6 max-md:text-center" : "mt-6 max-md:text-center"
               }
             >
               {contactInfo.number && (
                 <>
                   <a
-                    className="contact-detail"
+                    className="mt-5 text-[40px] max-md:text-[20px] font-regular text-text-subtitle no-underline hover:text-text-dark hover:shadow-[2px_1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"
                     href={"tel:" + contactInfo.number}
                   >
                     {contactInfo.number}
@@ -42,7 +41,7 @@ export default function Contact() {
                 </>
               )}
               <a
-                className="contact-detail-email"
+                className={isDark ? "dark-mode mt-5 text-[40px] max-md:text-[20px] font-regular text-text-subtitle no-underline hover:text-text-dark hover:shadow-[2px_1px_2px_rgba(0,0,0,0.3)] transition-all duration-300" : "mt-5 text-[40px] max-md:text-[20px] font-regular text-text-subtitle no-underline hover:text-text-dark hover:shadow-[2px_1px_2px_rgba(0,0,0,0.3)] transition-all duration-300"}
                 href={"mailto:" + contactInfo.email_address}
               >
                 {contactInfo.email_address}
@@ -52,13 +51,14 @@ export default function Contact() {
               <SocialMedia />
             </div>
           </div>
-          <div className="contact-image-div">
+          <div className="flex-1 max-md:hidden">
             {illustration.animated ? (
               <DisplayLottie animationData={email} />
             ) : (
               <img
                 alt="Man working"
                 src={require("../../../../assets/images/contactMailDark.svg")}
+                className="max-w-full h-auto ml-6 -mt-16"
               ></img>
             )}
           </div>

@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./Talks.scss";
 import TalkCard from "../../components/talkCard/TalkCard";
 import {talkSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -14,17 +13,17 @@ export default function Talks() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="talks">
         <div className="talk-header">
-          <h1 className="talk-header-title">{talkSection.title}</h1>
+          <h1 className="text-[56px] max-md:text-[26px] max-md:text-center font-regular leading-[0px]">{talkSection.title}</h1>
           <p
             className={
               isDark
-                ? "dark-mode talk-header-subtitle"
-                : "subTitle talk-header-subtitle"
+                ? "dark-mode max-md:text-base max-md:leading-normal max-md:text-center"
+                : "text-text-subtitle max-md:text-base max-md:leading-normal max-md:text-center"
             }
           >
             {talkSection.subtitle}
           </p>
-          <div className="talk-container">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-4 gap-x-12">
           {talkSection.talks.map((talk, i) => {
             return (
               <TalkCard

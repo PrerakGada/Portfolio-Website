@@ -9,8 +9,6 @@ import Testimonials from "./Testimonials/Testimonials";
 import Contact from "./Contact/Contact";
 import Blog from "./Blog/Blog";
 import Footer from "../components/Footer/Footer";
-import "../styles/global.scss";
-import "./Main.scss";
 
 /**
  * Version 2 - Portfolio Design
@@ -21,9 +19,9 @@ import "./Main.scss";
 
 const Main = () => {
   return (
-    <div className="v2-app">
+    <div className="min-h-screen flex flex-col bg-white scroll-smooth">
       <Header />
-      <main className="v2-main">
+      <main className="flex-1">
         <Hero />
         <Services />
         <WorkExperience />

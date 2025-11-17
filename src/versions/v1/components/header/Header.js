@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import Headroom from "react-headroom";
-import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../../../shared/contexts/StyleContext";
 import {
@@ -24,57 +23,138 @@ function Header() {
 
   return (
     <Headroom>
-      <header className={isDark ? "dark-menu header" : "header"}>
-        <a href="/" className="logo">
-          <span className="grey-color"> &lt;</span>
-          <span className="logo-name">{greeting.username}</span>
-          <span className="grey-color">/&gt;</span>
+      <header
+        className={`
+          max-h-[100px] w-full py-[15px] px-5 mx-auto
+          ${isDark ? 'bg-bg-dark-main text-text-light' : 'bg-bg-light-1'}
+          tablet:flex tablet:items-center tablet:justify-between
+        `}
+      >
+        <a href="/" className="block flex-none float-left text-2xl no-underline mt-2.5 leading-normal">
+          <span className="text-text-subtitle">&lt;</span>
+          <span className="font-agustina font-bold px-2.5" style={{fontVariantLigatures: 'no-common-ligatures', WebkitFontVariantLigatures: 'no-common-ligatures'}}>
+            {greeting.username}
+          </span>
+          <span className="text-text-subtitle">/&gt;</span>
         </a>
-        <input className="menu-btn" type="checkbox" id="menu-btn" />
+
+        <input className="hidden peer" type="checkbox" id="menu-btn" />
+
         <label
-          className="menu-icon"
+          className="cursor-pointer inline-block float-right py-7 px-5 relative select-none tablet:hidden"
           htmlFor="menu-btn"
           style={{color: "white"}}
         >
-          <span className={isDark ? "navicon navicon-dark" : "navicon"}></span>
+          <span className={`
+            block h-0.5 w-[18px] relative transition-all duration-200
+            ${isDark ? 'bg-text-light' : 'bg-icon'}
+            before:content-[''] before:block before:h-full before:absolute before:transition-all before:duration-200 before:w-full before:top-[5px]
+            after:content-[''] after:block after:h-full after:absolute after:transition-all after:duration-200 after:w-full after:-top-[5px]
+            ${isDark ? 'before:bg-text-light after:bg-text-light' : 'before:bg-icon after:bg-icon'}
+            peer-checked:bg-transparent peer-checked:before:rotate-[-45deg] peer-checked:after:rotate-45 peer-checked:before:top-0 peer-checked:after:top-0
+          `}></span>
         </label>
-        <ul className={isDark ? "dark-menu menu" : "menu"}>
+
+        <ul
+          className={`
+            m-0 p-0 list-none overflow-hidden clear-both max-h-0 transition-all duration-200
+            peer-checked:max-h-[486px]
+            tablet:max-h-none
+            ${isDark ? 'bg-bg-dark-main text-text-light' : ''}
+          `}
+        >
           {viewSkills && (
-            <li>
-              <a href="#skills">Skills</a>
+            <li className="tablet:float-left">
+              <a
+                href="#skills"
+                className={`
+                  block py-[15px] px-5 no-underline
+                  ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+                `}
+              >
+                Skills
+              </a>
             </li>
           )}
           {viewExperience && (
-            <li>
-              <a href="#experience">Work Experiences</a>
+            <li className="tablet:float-left">
+              <a
+                href="#experience"
+                className={`
+                  block py-[15px] px-5 no-underline
+                  ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+                `}
+              >
+                Work Experiences
+              </a>
             </li>
           )}
           {viewOpenSource && (
-            <li>
-              <a href="#opensource">Open Source</a>
+            <li className="tablet:float-left">
+              <a
+                href="#opensource"
+                className={`
+                  block py-[15px] px-5 no-underline
+                  ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+                `}
+              >
+                Open Source
+              </a>
             </li>
           )}
           {viewAchievement && (
-            <li>
-              <a href="#achievements">Achievements</a>
+            <li className="tablet:float-left">
+              <a
+                href="#achievements"
+                className={`
+                  block py-[15px] px-5 no-underline
+                  ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+                `}
+              >
+                Achievements
+              </a>
             </li>
           )}
           {viewBlog && (
-            <li>
-              <a href="#blogs">Blogs</a>
+            <li className="tablet:float-left">
+              <a
+                href="#blogs"
+                className={`
+                  block py-[15px] px-5 no-underline
+                  ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+                `}
+              >
+                Blogs
+              </a>
             </li>
           )}
           {viewTalks && (
-            <li>
-              <a href="#talks">Talks</a>
+            <li className="tablet:float-left">
+              <a
+                href="#talks"
+                className={`
+                  block py-[15px] px-5 no-underline
+                  ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+                `}
+              >
+                Talks
+              </a>
             </li>
           )}
-          <li>
-            <a href="#contact">Contact Me</a>
+          <li className="tablet:float-left">
+            <a
+              href="#contact"
+              className={`
+                block py-[15px] px-5 no-underline
+                ${isDark ? 'text-text-light hover:bg-button-primary' : 'text-text-black hover:bg-[#f4f4f4]'}
+              `}
+            >
+              Contact Me
+            </a>
           </li>
-          <li>
+          <li className="tablet:float-left">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a>
+            <a className="block py-[15px] px-5">
               <ToggleSwitch />
             </a>
           </li>

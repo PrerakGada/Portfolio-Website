@@ -3,7 +3,7 @@ import Button from "../../components/button/Button";
 import Loading from "../../containers/loading/Loading";
 import StyleContext from "../../../../shared/contexts/StyleContext";
 import { openSource, socialMediaLinks } from "../../../../shared/data/portfolio";
-import "./Project.scss";
+
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
@@ -45,9 +45,9 @@ export default function Projects() {
   ) {
     return (
       <Suspense fallback={renderLoader()}>
-        <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
-          <div className="repo-cards-div-main">
+        <div className="w-[90%] py-5 px-[10px] mx-auto mt-8" id="opensource">
+          <h1 className="text-[30px] md:text-[40px] lg:text-[52px] font-normal leading-normal text-center md:text-left">Open Source Projects</h1>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-4">
             {repo.map((v, i) => {
               if (!v) {
                 console.error(

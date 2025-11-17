@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./Podcast.scss";
 import {podcastSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../../../shared/contexts/StyleContext";
@@ -17,18 +16,18 @@ export default function Podcast() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main">
         <div className="podcast-header">
-          <h1 className="podcast-header-title">{podcastSection.title}</h1>
+          <h1 className="text-[56px] max-md:text-[30px] max-md:text-center font-regular leading-[0px]">{podcastSection.title}</h1>
           <p
             className={
               isDark
-                ? "dark-mode podcast-header-subtitle"
-                : "subTitle podcast-header-subtitle"
+                ? "dark-mode max-md:text-base max-md:leading-normal max-md:text-center"
+                : "text-text-subtitle max-md:text-base max-md:leading-normal max-md:text-center"
             }
           >
             {podcastSection.subtitle}
           </p>
         </div>
-        <div className="podcast-main-div">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 max-md:text-center">
           {podcastSection.podcast.map((podcastLink, i) => {
             if (!podcastLink) {
               console.log(
@@ -38,7 +37,7 @@ export default function Podcast() {
             return (
               <div key={i}>
                 <iframe
-                  className="podcast"
+                  className="w-[600px] max-md:w-[300px]"
                   src={podcastLink}
                   frameBorder="0"
                   scrolling="no"

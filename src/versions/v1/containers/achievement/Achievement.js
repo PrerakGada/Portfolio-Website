@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./Achievement.scss";
 import AchievementCard from "../../components/achievementCard/AchievementCard";
 import {achievementSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -17,8 +16,8 @@ export default function Achievement() {
             <h1
               className={
                 isDark
-                  ? "dark-mode heading achievement-heading"
-                  : "heading achievement-heading"
+                  ? "dark-mode heading text-[56px] max-[1380px]:text-[40px] max-md:text-[30px] max-md:text-center font-regular leading-normal m-0"
+                  : "heading text-[56px] max-[1380px]:text-[40px] max-md:text-[30px] max-md:text-center font-regular leading-normal m-0"
               }
             >
               {achievementSection.title}
@@ -26,8 +25,8 @@ export default function Achievement() {
             <p
               className={
                 isDark
-                  ? "dark-mode subTitle achievement-subtitle"
-                  : "subTitle achievement-subtitle"
+                  ? "dark-mode text-text-subtitle uppercase m-0 mb-[50px] max-md:text-base max-md:leading-normal max-md:text-center"
+                  : "text-text-subtitle uppercase m-0 mb-[50px] max-md:text-base max-md:leading-normal max-md:text-center"
               }
             >
               {achievementSection.subtitle}

@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./WorkExperience.scss";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import {workExperiences} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -13,10 +12,10 @@ export default function WorkExperience() {
 
   if (workExperiences.display) {
     const content = (
-      <div className="experience-container" id="workExperience">
-        <div>
-          <h1 className="experience-heading">Experiences</h1>
-          <div className="experience-cards-div">
+      <div className="flex w-[90%] py-5 px-[10px] mx-auto mt-8 animate-fadeInUp" id="workExperience">
+        <div className="flex-1">
+          <h1 className="text-[30px] md:text-[40px] lg:text-[56px] font-normal text-center md:text-left">Experiences</h1>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-4">
             {workExperiences.experience.map((card, i) => {
               return (
                 <ExperienceCard

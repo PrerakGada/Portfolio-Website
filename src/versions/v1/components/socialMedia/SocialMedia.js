@@ -1,5 +1,4 @@
 import React from "react";
-import "./SocialMedia.scss";
 import {socialMediaLinks} from "../../../../shared/data/portfolio";
 
 export default function socialMedia() {
@@ -7,15 +6,22 @@ export default function socialMedia() {
     return null;
   }
   return (
-    <div className="social-media-div">
+    <div className="text-[2em] tablet:text-center">
       {socialMediaLinks.github ? (
         <a
           href={socialMediaLinks.github}
-          className="icon-button github"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-github"></i>
+          <i className="
+            fab fa-github
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-github hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -23,11 +29,18 @@ export default function socialMedia() {
       {socialMediaLinks.linkedin ? (
         <a
           href={socialMediaLinks.linkedin}
-          className="icon-button linkedin"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-linkedin-in"></i>
+          <i className="
+            fab fa-linkedin-in
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-linkedin hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -35,11 +48,18 @@ export default function socialMedia() {
       {socialMediaLinks.gmail ? (
         <a
           href={`mailto:${socialMediaLinks.gmail}`}
-          className="icon-button google"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fas fa-envelope"></i>
+          <i className="
+            fas fa-envelope
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-google hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -47,11 +67,18 @@ export default function socialMedia() {
       {socialMediaLinks.gitlab ? (
         <a
           href={socialMediaLinks.gitlab}
-          className="icon-button gitlab"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-gitlab"></i>
+          <i className="
+            fab fa-gitlab
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-gitlab hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -59,11 +86,18 @@ export default function socialMedia() {
       {socialMediaLinks.facebook ? (
         <a
           href={socialMediaLinks.facebook}
-          className="icon-button facebook"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-facebook-f"></i>
+          <i className="
+            fab fa-facebook-f
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-facebook hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -71,11 +105,18 @@ export default function socialMedia() {
       {socialMediaLinks.instagram ? (
         <a
           href={socialMediaLinks.instagram}
-          className="icon-button instagram"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-instagram"></i>
+          <i className="
+            fab fa-instagram
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-instagram hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -83,11 +124,18 @@ export default function socialMedia() {
       {socialMediaLinks.twitter ? (
         <a
           href={socialMediaLinks.twitter}
-          className="icon-button twitter"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-twitter"></i>
+          <i className="
+            fab fa-twitter
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-twitter hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -95,11 +143,18 @@ export default function socialMedia() {
       {socialMediaLinks.medium ? (
         <a
           href={socialMediaLinks.medium}
-          className="icon-button medium"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-medium"></i>
+          <i className="
+            fab fa-medium
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-medium hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -107,11 +162,18 @@ export default function socialMedia() {
       {socialMediaLinks.stackoverflow ? (
         <a
           href={socialMediaLinks.stackoverflow}
-          className="icon-button stack-overflow"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-stack-overflow"></i>
+          <i className="
+            fab fa-stack-overflow
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-stackoverflow hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}
@@ -119,11 +181,18 @@ export default function socialMedia() {
       {socialMediaLinks.kaggle ? (
         <a
           href={socialMediaLinks.kaggle}
-          className="icon-button kaggle"
+          className="mb-2.5 inline-block"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fab fa-kaggle"></i>
+          <i className="
+            fab fa-kaggle
+            text-text-light rounded-[2.6rem] cursor-pointer inline-block
+            text-[1.3rem] h-[2.6rem] leading-[2.6rem] mx-[5px] my-0 mb-2.5
+            relative text-center select-none w-[2.6rem]
+            transition-all duration-200 ease-in
+            bg-social-kaggle hover:bg-text-black
+          "></i>
           <span></span>
         </a>
       ) : null}

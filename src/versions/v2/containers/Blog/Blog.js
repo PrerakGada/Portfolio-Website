@@ -1,6 +1,5 @@
 
 import { blogSection } from "../../../../shared/data/portfolio";
-import "./Blog.scss";
 
 const Blog = () => {
   const sampleBlogs = [
@@ -32,38 +31,54 @@ const Blog = () => {
     : sampleBlogs;
 
   return (
-    <section className="v2-blog section">
+    <section className="bg-bg-light section">
       <div className="container">
-        <div className="v2-blog-header">
+        <div className="flex justify-between items-center mb-2xl tablet:flex-col tablet:gap-md tablet:mb-xl">
           <h2 className="v2-section-title">
             From my blog post
           </h2>
           <a href="/blog" className="btn btn-primary">See All</a>
         </div>
 
-        <div className="v2-blog-grid">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-xl tablet:gap-lg max-[640px]:grid-cols-1">
           {blogs.slice(0, 3).map((blog, index) => (
-            <div key={index} className="v2-blog-card">
-              <div className="v2-blog-image">
-                <div className="v2-blog-image-placeholder">
+            <div
+              key={index}
+              className="bg-bg-white rounded-lg overflow-hidden transition-all duration-base shadow-md hover:-translate-y-2 hover:shadow-xl group"
+            >
+              {/* Blog Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <div
+                  className="w-full h-full"
+                  style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+                >
                   {/* Placeholder for blog image */}
                 </div>
-                <button className="v2-blog-arrow">
+                <button className="absolute bottom-md right-md w-[60px] h-[60px] tablet:w-[50px] tablet:h-[50px] rounded-circle bg-primary-dark text-text-light flex items-center justify-center transition-all duration-base group-hover:bg-primary-orange group-hover:translate-x-1 group-hover:-translate-y-1">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
               </div>
 
-              <div className="v2-blog-content">
-                <span className="v2-blog-category">{blog.category}</span>
+              {/* Blog Content */}
+              <div className="p-lg">
+                <span className="inline-block bg-bg-light px-4 py-[6px] rounded-full text-sm font-medium text-text-dark mb-md">
+                  {blog.category}
+                </span>
 
-                <div className="v2-blog-meta">
-                  <span className="v2-blog-author">{blog.author}</span>
-                  <span className="v2-blog-date">{blog.date}</span>
+                <div className="flex items-center gap-sm mb-md text-sm text-text-gray">
+                  <span className="before:content-['•_'] before:text-primary-orange before:mr-1">
+                    {blog.author}
+                  </span>
+                  <span className="before:content-['•_'] before:text-primary-orange before:mr-1">
+                    {blog.date}
+                  </span>
                 </div>
 
-                <h3 className="v2-blog-title">{blog.title}</h3>
+                <h3 className="text-lg tablet:text-base font-bold text-text-dark leading-tight">
+                  {blog.title}
+                </h3>
               </div>
             </div>
           ))}

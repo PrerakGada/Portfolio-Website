@@ -1,5 +1,4 @@
 import React, {Suspense, useContext} from "react";
-import "./twitter.scss";
 import Loading from "../loading/Loading";
 import {TwitterTimelineEmbed} from "react-twitter-embed";
 import {twitterDetails} from "../../../../shared/data/portfolio";
@@ -7,7 +6,7 @@ import StyleContext from "../../../../shared/contexts/StyleContext";
 
 const renderLoader = () => <Loading />;
 const cantDisplayError =
-  "<div className='centerContent'><h2>Can't load? Check privacy protection settings</h2></div>";
+  "<div className='text-center m-auto block mx-auto my-0 p-6'><h2>Can't load? Check privacy protection settings</h2></div>";
 
 function timeOut() {
   setTimeout(function () {
@@ -30,8 +29,8 @@ export default function Twitter() {
   if (twitterDetails.userName) {
     return (
       <Suspense fallback={renderLoader()}>
-        <div className="tw-main-div" id="twitter">
-          <div className="centerContent">
+        <div className="ml-[15px] mr-[15px] mb-[15px] w-auto p-6" id="twitter">
+          <div className="text-center m-auto block mx-auto my-0 p-6">
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName={twitterDetails.userName}

@@ -1,10 +1,9 @@
 import React from "react";
-import "./App.scss";
 import VersionRouter from "./routes/VersionRouter";
 
 function App() {
   return (
-    <div>
+    <div className="text-center w-full overflow-x-hidden">
       <VersionRouter />
     </div>
   );

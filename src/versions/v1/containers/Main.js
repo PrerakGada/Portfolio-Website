@@ -19,7 +19,6 @@ import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../../../shared/data/portfolio";
 import {StyleProvider} from "../../../shared/contexts/StyleContext";
 import {useLocalStorage} from "../../../shared/hooks/useLocalStorage";
-import "./Main.scss";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");
@@ -44,7 +43,7 @@ const Main = () => {
   };
 
   return (
-    <div className={isDark ? "dark-mode" : null}>
+    <div className={isDark ? "bg-bg-dark-main text-white transition-all duration-100" : ""}>
       <StyleProvider value={{isDark: isDark, changeTheme: changeTheme}}>
         {isShowingSplashAnimation && splashScreen.enabled ? (
           <SplashScreen />
