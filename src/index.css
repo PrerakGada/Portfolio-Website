@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: "Agustina Regular";
@@ -16,153 +18,6 @@
   font-display: swap;
 }
 
-/* Tailwind v4 Theme Configuration using CSS Custom Properties */
-@theme {
-  /* Color Palette */
-  --color-primary-purple: #55198b;
-  --color-primary-purple-hover: #8c43ce;
-  --color-primary-orange: #ff8c42;
-  --color-primary-dark: #2b2d3a;
-  --color-primary-light: #ffffff;
-
-  /* Background Colors */
-  --color-bg-dark: #1f2128;
-  --color-bg-dark-striped: #1a1c23;
-  --color-bg-dark-main: #171c28;
-  --color-bg-light: #f8f9fa;
-  --color-bg-white: #ffffff;
-  --color-bg-light-1: #fff;
-  --color-bg-light-2: #ffffff;
-  --color-bg-light-3: #f5f2f4;
-
-  /* Text Colors */
-  --color-text-dark: #2c3e50;
-  --color-text-light: #ffffff;
-  --color-text-gray: #8b92a8;
-  --color-text-muted: #9ca3af;
-  --color-text-black: #000000;
-  --color-text-subtitle: #868e96;
-  --color-text-card-subtitle: #666666;
-  --color-text-talk-subtitle: #7f8287;
-  --color-text-blog-title: #262626;
-
-  /* Button Colors */
-  --color-button-primary: #55198b;
-  --color-button-hover: #8c43ce;
-  --color-button-top-hover: #000;
-
-  /* Toggle Switch */
-  --color-toggle-check: #2196f3;
-  --color-toggle-slider: #ccc;
-
-  /* GitHub Colors */
-  --color-github-repo-lang: #0000ff;
-  --color-github-repo-card: rgb(88, 96, 105);
-  --color-github-repo-stats: rgb(106, 115, 125);
-  --color-github-repo-name: rgb(36, 41, 46);
-  --color-github-profile-location: #ffebcd;
-  --color-github-profile-border: #6c63ff;
-
-  /* Social Media Colors */
-  --color-social-facebook: #3b5998;
-  --color-social-linkedin: #0e76a8;
-  --color-social-github: #333;
-  --color-social-gitlab: #fca326;
-  --color-social-google: #ea4335;
-  --color-social-twitter: #1da1f2;
-  --color-social-medium: #000;
-  --color-social-stackoverflow: #f48024;
-  --color-social-instagram: #c13584;
-  --color-social-kaggle: #20beff;
-
-  /* Border Colors */
-  --color-border-light: #e5e7eb;
-  --color-border-dark: #374151;
-  --color-border-light-1: rgba(211, 211, 211, 0.397);
-  --color-border-education: #a9a7f9;
-
-  /* Misc Colors */
-  --color-skills: #645beb;
-  --color-progress-bar: rgb(243, 239, 239);
-  --color-progress-span: #aaa5ff;
-  --color-icon: #333;
-
-  /* Spacing Scale */
-  --spacing-xs: 8px;
-  --spacing-sm: 16px;
-  --spacing-md: 24px;
-  --spacing-lg: 32px;
-  --spacing-xl: 48px;
-  --spacing-2xl: 64px;
-  --spacing-3xl: 96px;
-  --spacing-container-padding: 80px;
-  --spacing-container-padding-mobile: 24px;
-
-  /* Font Families */
-  --font-family-poppins: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-family-agustina: 'Agustina', sans-serif;
-  --font-family-montserrat: 'Montserrat', sans-serif;
-
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-2xl: 50px;
-  --radius-full: 50px;
-  --radius-circle: 50%;
-
-  /* Breakpoints */
-  --breakpoint-mobile: 320px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
-  --breakpoint-wide: 1440px;
-
-  /* Animations */
-  --animate-wave: wave 1s ease-in-out infinite;
-  --animate-float: float 3s ease-in-out infinite;
-  --animate-fadeIn: fadeIn 0.6s ease-out;
-  --animate-fadeInUp: fadeInUp 0.8s ease-out;
-}
-
-/* Keyframe Animations */
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(15deg); }
-  75% { transform: rotate(-15deg); }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes skCircleBounceDelay {
-  0%, 80%, 100% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
-  }
-}
-
-/* Base Styles */
 @layer base {
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -181,30 +36,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Media Query */
   @media (max-width: 1380px) {
     html,
     body {
       font-size: 1rem;
       line-height: normal;
     }
-  }
-}
-
-/* Custom Utility Classes */
-@layer utilities {
-  .animate-wave {
-    animation: var(--animate-wave);
-  }
-
-  .animate-float {
-    animation: var(--animate-float);
-  }
-
-  .animate-fadeIn {
-    animation: var(--animate-fadeIn);
-  }
-
-  .animate-fadeInUp {
-    animation: var(--animate-fadeInUp);
   }
 }
