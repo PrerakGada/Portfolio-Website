@@ -1,3 +1,4 @@
+/* Base global styles */
 @font-face {
   font-family: "Agustina Regular";
   font-style: normal;
@@ -23,10 +24,10 @@ body {
 body {
   margin: 0;
   font: 16px / 20px Montserrat, "Montserrat", sans-serif;
-  /* font: 19px / 23px Montserrat, "Montserrat", sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 /* Media Query */
 @media (max-width: 1380px) {
   html,

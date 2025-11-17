@@ -1,9 +1,27 @@
 import { defineConfig } from "vite";
 import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+
+// Custom plugin wrapper to only process v2 Tailwind files
+function tailwindPlugin() {
+  const plugin = tailwindcss();
+
+  return {
+    ...plugin,
+    name: 'tailwind-filtered',
+    transform(code, id) {
+      // Only process files in v2/styles directory or that contain tailwind imports
+      if (id.includes('versions/v2/styles') || code.includes('@import "tailwindcss"')) {
+        return plugin.transform?.call(this, code, id);
+      }
+      return null;
+    }
+  };
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [],
+  plugins: [tailwindPlugin()],
   esbuild: {
     loader: "jsx",
     include: /src\/.*\.jsx?$/,
