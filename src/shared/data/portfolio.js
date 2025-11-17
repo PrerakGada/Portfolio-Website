@@ -131,11 +131,12 @@ https://fontawesome.com/icons?d=gallery */
 const educationInfo = {
   display: true, // Set false to hide this section, defaults to true
   schools: [
+
     {
       schoolName: "University of Mumbai",
       logo: require("../../assets/images/ace.jpeg"),
       subHeader: "B.E. in Electronics and Computer Science",
-      duration: "October 2022 - Present",
+      duration: "October 2022 - May 2024 (Dropped Out)",
       desc: "",
       descBullets: [
         "GDSC App Lead and IEEE Techithon Tech Head",
@@ -186,10 +187,22 @@ const workExperiences = {
   display: true, //Set it to true to show workExperiences Section
   experience: [
     {
+      role: "Founder and CEO",
+      company: "Engaze",
+      companylogo: require("../../assets/images/engaze.png"),
+      date: "June 2024 - Present",
+      desc: "Developing Full Stack Web and Mobile Applications for clients",
+      descBullets: [
+        "Managing Client Relations",
+        "Developing and Maintaining Web and Mobile Applications",
+        "Working on a variety of projects using different technologies",
+      ]
+    },
+    {
       role: "Software Development Freelancer",
       company: "Freelancing",
       companylogo: require("../../assets/images/freelancer.jpeg"),
-      date: "June 2023 – Present",
+      date: "April 2023 - July 2024",
       desc: "Developing Full Stack Web and Mobile Applications for clients",
       descBullets: [
         "Managing Client Relations",
@@ -201,7 +214,7 @@ const workExperiences = {
       role: "Google Developer Student Club",
       company: "App Lead",
       companylogo: require("../../assets/images/gdsc.png"),
-      date: "Aug 2023 – Present",
+      date: "Aug 2023 - June 2024",
       desc: "Leading a team of flutter developers to develop robust mobile application projects for the community",
       descBullets: [
         "Teaching and guiding the team of student developers",
@@ -213,7 +226,7 @@ const workExperiences = {
       role: "IEEE Techithon 2023",
       company: "Techinical Head",
       companylogo: require("../../assets/images/ieee-logo.jpeg"),
-      date: "Aug 2023 – Present",
+      date: "Aug 2023 - June 2024",
       desc: "Leading the technical team of 100+ members to organize various technical events and projects for the college's annual TechFest",
       descBullets: [
         "Organising a 24 hour hackathon for 150+ participants for the first time in college's history",
@@ -225,7 +238,7 @@ const workExperiences = {
       role: "IoT Systems Developer Intern",
       company: "ExperientialEtc",
       companylogo: require("../../assets/images/expetc.jpeg"),
-      date: "April 2023 – Sep 2023",
+      date: "April 2023 - Sep 2023",
       desc: "Working on IoT based projects using Arduino, Raspberry Pi and other microcontrollers",
       descBullets: [
         "Developing IoT based projects for clients",
@@ -237,7 +250,7 @@ const workExperiences = {
       role: "Flutter Developer Lead",
       company: "CitJo",
       companylogo: require("../../assets/images/citjo.png"),
-      date: "April 2022 – Sep 2022",
+      date: "April 2022 - Sep 2022",
       desc: "Developing a mobile application for a startup using Flutter and AWS",
       descBullets: [
         "Learning and implementing Flutter and AWS on a live project",
@@ -249,7 +262,7 @@ const workExperiences = {
       role: "Business Operations and Digital Marketing Specialist",
       company: "hungry brain",
       companylogo: require("../../assets/images/hb.jpg"),
-      date: "June 2020 – Present",
+      date: "June 2020 - Present",
       desc: "Fueling the success of our family-owned company through innovative digital strategies and operational excellence.",
       descBullets: [
         "Managing the company's social media accounts and website",
