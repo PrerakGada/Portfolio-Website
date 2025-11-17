@@ -5,6 +5,24 @@
 import emoji from "react-easy-emoji";
 import splashAnimation from "../../assets/lottie/splashAnimation"; // Rename to your file name for custom animation
 
+// Image imports for Vite
+import aceImage from "../../assets/images/ace.jpeg";
+import sbmpImage from "../../assets/images/sbmp.jpeg";
+import engazeImage from "../../assets/images/engaze.png";
+import freelancerImage from "../../assets/images/freelancer.jpeg";
+import gdscImage from "../../assets/images/gdsc.png";
+import ieeeImage from "../../assets/images/ieee-logo.jpeg";
+import expetcImage from "../../assets/images/expetc.jpeg";
+import citjoImage from "../../assets/images/citjo.png";
+import hbImage from "../../assets/images/hb.jpg";
+import boultImage from "../../assets/images/boult.png";
+import netajiImage from "../../assets/images/netajiapp.jpeg";
+import kjsceImage from "../../assets/certificates/kjsce.jpeg";
+import unscriptImage from "../../assets/certificates/unscript_rookies.png";
+import spitImage from "../../assets/certificates/spit.png";
+import loc4Image from "../../assets/certificates/loc4.png";
+import iotPaperImage from "../../assets/certificates/iot_paper.png";
+
 // Splash Screen
 
 const splashScreen = {
@@ -134,7 +152,7 @@ const educationInfo = {
 
     {
       schoolName: "University of Mumbai",
-      logo: require("../../assets/images/ace.jpeg"),
+      logo: aceImage,
       subHeader: "B.E. in Electronics and Computer Science",
       duration: "October 2022 - May 2024 (Dropped Out)",
       desc: "",
@@ -147,7 +165,7 @@ const educationInfo = {
     },
     {
       schoolName: "Shri Bhagubhai Mafatlal Polytechnic",
-      logo: require("../../assets/images/sbmp.jpeg"),
+      logo: sbmpImage,
       subHeader: "Diploma in Computer Science Engineering",
       duration: "August 2019 - July 2022",
       desc: "Class Representative and SIH Student Coordinator",
@@ -189,7 +207,7 @@ const workExperiences = {
     {
       role: "Founder and CEO",
       company: "Engaze",
-      companylogo: require("../../assets/images/engaze.png"),
+      companylogo: engazeImage,
       date: "June 2024 - Present",
       desc: "Developing Full Stack Web and Mobile Applications for clients",
       descBullets: [
@@ -201,7 +219,7 @@ const workExperiences = {
     {
       role: "Software Development Freelancer",
       company: "Freelancing",
-      companylogo: require("../../assets/images/freelancer.jpeg"),
+      companylogo: freelancerImage,
       date: "April 2023 - July 2024",
       desc: "Developing Full Stack Web and Mobile Applications for clients",
       descBullets: [
@@ -213,7 +231,7 @@ const workExperiences = {
     {
       role: "Google Developer Student Club",
       company: "App Lead",
-      companylogo: require("../../assets/images/gdsc.png"),
+      companylogo: gdscImage,
       date: "Aug 2023 - June 2024",
       desc: "Leading a team of flutter developers to develop robust mobile application projects for the community",
       descBullets: [
@@ -225,7 +243,7 @@ const workExperiences = {
     {
       role: "IEEE Techithon 2023",
       company: "Techinical Head",
-      companylogo: require("../../assets/images/ieee-logo.jpeg"),
+      companylogo: ieeeImage,
       date: "Aug 2023 - June 2024",
       desc: "Leading the technical team of 100+ members to organize various technical events and projects for the college's annual TechFest",
       descBullets: [
@@ -237,7 +255,7 @@ const workExperiences = {
     {
       role: "IoT Systems Developer Intern",
       company: "ExperientialEtc",
-      companylogo: require("../../assets/images/expetc.jpeg"),
+      companylogo: expetcImage,
       date: "April 2023 - Sep 2023",
       desc: "Working on IoT based projects using Arduino, Raspberry Pi and other microcontrollers",
       descBullets: [
@@ -249,7 +267,7 @@ const workExperiences = {
     {
       role: "Flutter Developer Lead",
       company: "CitJo",
-      companylogo: require("../../assets/images/citjo.png"),
+      companylogo: citjoImage,
       date: "April 2022 - Sep 2022",
       desc: "Developing a mobile application for a startup using Flutter and AWS",
       descBullets: [
@@ -261,7 +279,7 @@ const workExperiences = {
     {
       role: "Business Operations and Digital Marketing Specialist",
       company: "hungry brain",
-      companylogo: require("../../assets/images/hb.jpg"),
+      companylogo: hbImage,
       date: "June 2020 - Present",
       desc: "Fueling the success of our family-owned company through innovative digital strategies and operational excellence.",
       descBullets: [
@@ -289,7 +307,7 @@ const bigProjects = {
   subtitle: "SOME STARTUPS AND COMPANIES THAT I HELPED TO CREATE THEIR TECH",
   projects: [
     {
-      image: require("../../assets/images/boult.png"),
+      image: boultImage,
       projectName: "Boult Audio",
       projectDesc: "All in one Fitness Smart Watch App for India's fastest growing wearable brand",
       footerLink: [
@@ -301,7 +319,7 @@ const bigProjects = {
       ]
     },
     {
-      image: require("../../assets/images/netajiapp.jpeg"),
+      image: netajiImage,
       projectName: "Netaji: Political Poster Maker App",
       projectDesc: "Netaji Political Poster Maker helps you to create eye-catching festival poster maker, festival banners, or political campaign materials, all at one place",
       footerLink: [
@@ -328,7 +346,7 @@ const achievementSection = {
       title: "Winner of KJSCE Hacks 7.0",
       subtitle:
         "1st place at KJSCE Hacks 7.0, 24-hour hackathon conducted by K.J. Somaiya College of Engineering on 1st-2nd April 2023",
-      image: require("../../assets/certificates/kjsce.jpeg"),
+      image: kjsceImage,
       imageAlt: "Prerak Gada KJSCE Hacks 7.0 Certificate",
       footerLink: [
         // {
@@ -341,7 +359,7 @@ const achievementSection = {
       title: "Winner of Unscript Rookies Hackathon",
       subtitle:
         "1st place in App Domain of Unscript Rookie's Hackathon 2023 Organised By Fr. Conceicao Rodrigues College Of Engineering On 11th-12th February 2023.",
-      image: require("../../assets/certificates/unscript_rookies.png"),
+      image: unscriptImage,
       imageAlt: "Prerak Gada Unscript Rookies Hackathon Certificate",
       footerLink: [
       ]
@@ -349,7 +367,7 @@ const achievementSection = {
     {
       title: "Runner Up of S.P.I.T. Hackathon 2023 ",
       subtitle: "2nd place at S.P.I.T. Hackathon 2023, 24-hour hackathon conducted by Sardar Patel Institute of Technology on 4th-5th February 2023",
-      image: require("../../assets/certificates/spit.png"),
+      image: spitImage,
       imageAlt: "Prerak Gada S.P.I.T. Hackathon Certificate",
       footerLink: [
         // { name: "Certification", url: "" },
@@ -363,7 +381,7 @@ const achievementSection = {
       title: "Runner Up of LOC 4.0 Hackathon",
       subtitle:
         "2nd place at LOC 4.0, 24-hour hackathon conducted by DJSCE ACM Student Chapter on 12th-13th March 2022",
-      image: require("../../assets/certificates/loc4.png"),
+      image: loc4Image,
       imageAlt: "Prerak Gada LOC 4.0 Certificate",
       footerLink: [
         // {
@@ -376,7 +394,7 @@ const achievementSection = {
       title: "Paper Publication: Fundamentals of IoT",
       subtitle:
         "Published a research paper on Fundamentals of IoT (Internet of Things) in International Journal of Innovative Research in Computer Science and Engineering (IJIRCSE)",
-      image: require("../../assets/certificates/iot_paper.png"),
+      image: iotPaperImage,
       imageAlt: "Prerak Gada IoT Paper Publication Certificate",
       footerLink: [
         {
