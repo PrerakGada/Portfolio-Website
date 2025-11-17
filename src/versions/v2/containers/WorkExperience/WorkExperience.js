@@ -1,4 +1,4 @@
-
+import React from "react";
 import { workExperiences } from "../../../../shared/data/portfolio";
 
 const WorkExperience = () => {
