@@ -1,4 +1,4 @@
-
+import React from "react";
 import { greeting } from "../../../../shared/data/portfolio";
 import "./Hero.scss";
 

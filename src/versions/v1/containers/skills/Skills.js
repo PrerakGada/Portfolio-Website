@@ -6,6 +6,7 @@ import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import StyleContext from "../../../../shared/contexts/StyleContext";
 import { illustration, skillsSection } from "../../../../shared/data/portfolio";
 import "./Skills.scss";
+import developerActivity from "../../../../assets/images/developerActivity.svg";
 
 export default function Skills() {
   const { isDark } = useContext(StyleContext);
@@ -22,7 +23,7 @@ export default function Skills() {
             ) : (
               <img
                 alt="Man Working"
-                src={require("../../../../assets/images/developerActivity.svg")}
+                src={developerActivity}
               ></img>
             )}
           </div>

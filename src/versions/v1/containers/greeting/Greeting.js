@@ -9,6 +9,7 @@ import Button from "../../components/button/Button";
 
 import {illustration, greeting} from "../../../../shared/data/portfolio";
 import StyleContext from "../../../../shared/contexts/StyleContext";
+import manOnTable from "../../../../assets/images/manOnTable.svg";
 
 export default function Greeting() {
   const {isDark} = useContext(StyleContext);
@@ -56,7 +57,7 @@ export default function Greeting() {
             ) : (
               <img
                 alt="man sitting on table"
-                src={require("../../../../assets/images/manOnTable.svg")}
+                src={manOnTable}
               ></img>
             )}
           </div>
