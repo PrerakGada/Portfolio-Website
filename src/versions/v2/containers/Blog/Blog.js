@@ -1,4 +1,4 @@
-
+import React from "react";
 import { blogSection } from "../../../../shared/data/portfolio";
 import "./Blog.scss";
 
