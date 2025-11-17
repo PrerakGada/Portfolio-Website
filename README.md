@@ -111,11 +111,11 @@ Note: Configuring environment variables before deploying your portfolio is highl
   - package.json
 ```
 
-2. Inside the .env file, add key `REACT_APP_GITHUB_TOKEN` and assign your GitHub token like this, also add your username as `GITHUB_USERNAME`
+2. Inside the .env file, add key `VITE_GITHUB_TOKEN` and assign your GitHub token like this, also add your username as `GITHUB_USERNAME`
 
 ```env
 // .env
-REACT_APP_GITHUB_TOKEN = "YOUR GITHUB TOKEN HERE"
+VITE_GITHUB_TOKEN = "YOUR GITHUB TOKEN HERE"
 GITHUB_USERNAME = "YOUR GITHUB USERNAME"
 USE_GITHUB_DATA = "true"
 ```

@@ -2,11 +2,13 @@
 
 ## Repository Overview
 
-This is a **multi-version React-based portfolio website** built with Create React App. It supports multiple independent design versions (v1 and v2) that share common portfolio data, allowing for A/B testing or design evolution while maintaining a single codebase.
+This is a **multi-version React-based portfolio website** built with Vite. It supports multiple independent design versions (v1 and v2) that share common portfolio data, allowing for A/B testing or design evolution while maintaining a single codebase.
 
 **Live Site:** https://prerak.hungrybrain.in
 **Owner:** Prerak Gada
-**Primary Tech:** React 16.10.2, SASS, React Router, Firebase Hosting
+**Primary Tech:** React 16.10.2, Vite 5, SASS, React Router, Firebase Hosting
+
+**Note:** This project was migrated from Create React App to Vite for faster development and build times.
 
 ---
 
@@ -36,9 +38,9 @@ npm run deploy     # Deploy to GitHub Pages
 
 ### Core Technologies
 - **React 16.10.2** - UI library (class & functional components)
+- **Vite 5** - Build tool and dev server (fast HMR, optimized builds)
 - **React Router DOM 5.3.4** - Client-side routing
 - **SASS 1.32.8** - CSS preprocessing (44+ SCSS files)
-- **Create React App** - Build toolchain
 
 ### Key Dependencies
 - **react-lottie** - JSON-based animations
@@ -49,10 +51,11 @@ npm run deploy     # Deploy to GitHub Pages
 - **react-easy-emoji** - Cross-platform emoji support
 
 ### Build & Deployment
+- **Vite 5** - Fast build tool with optimized production builds
 - **Prettier 2.3.1** - Code formatting
 - **Firebase** - Primary hosting
 - **gh-pages** - GitHub Pages deployment option
-- **Docker** - Containerization support
+- **Docker** - Containerization support (may need updates for Vite)
 
 ---
 
@@ -208,7 +211,7 @@ Node.js script that runs during build to fetch external data.
 3. Saves to `/public/profile.json` and `/public/blogs.json`
 
 **Requirements:**
-- GitHub personal access token in `.env` as `REACT_APP_GITHUB_TOKEN`
+- GitHub personal access token in `.env` as `VITE_GITHUB_TOKEN`
 - GitHub username in `.env` as `GITHUB_USERNAME`
 - Medium username in `.env` as `MEDIUM_USERNAME`
 
@@ -218,7 +221,7 @@ Node.js script that runs during build to fetch external data.
 
 #### `.env` (gitignored)
 ```env
-REACT_APP_GITHUB_TOKEN = "your_github_token_here"
+VITE_GITHUB_TOKEN = "your_github_token_here"
 GITHUB_USERNAME = "PrerakGada"
 USE_GITHUB_DATA = "true"
 MEDIUM_USERNAME = "prerakgada"
@@ -668,7 +671,7 @@ const skillsSection = {
 **User request:** "Update my GitHub projects"
 
 **Steps:**
-1. Ensure `.env` file has valid `REACT_APP_GITHUB_TOKEN` and `GITHUB_USERNAME`
+1. Ensure `.env` file has valid `VITE_GITHUB_TOKEN` and `GITHUB_USERNAME`
 2. Run `node fetch.js` to fetch latest data
 3. Verify `/public/profile.json` and `/public/blogs.json` are updated
 4. Rebuild the app
@@ -822,19 +825,23 @@ Global color imports vary by file location:
 
 ### 4. Environment Variables
 
-React environment variables **must** start with `REACT_APP_`:
+Vite environment variables **must** start with `VITE_`:
 
 ```env
 # ✅ GOOD
-REACT_APP_GITHUB_TOKEN = "token_here"
+VITE_GITHUB_TOKEN = "token_here"
 
-# ❌ BAD (won't be accessible in React)
+# ❌ BAD (won't be accessible in Vite)
 GITHUB_TOKEN = "token_here"
 ```
 
 Access in code:
 ```javascript
-const token = process.env.REACT_APP_GITHUB_TOKEN;
+// In browser/React components
+const token = import.meta.env.VITE_GITHUB_TOKEN;
+
+// In Node.js scripts (like fetch.js)
+const token = process.env.VITE_GITHUB_TOKEN;
 ```
 
 ### 5. GitHub Token Scope
@@ -1412,7 +1419,25 @@ Before completing any task, verify:
 
 ## Changelog
 
-### 2025-11-17
+### 2025-11-17 - Vite Migration
+- **Migrated from Create React App to Vite 5**
+  - Removed `react-scripts` dependency
+  - Added Vite and `@vitejs/plugin-react`
+  - Configured Vite to support JSX in `.js` files (esbuild loader)
+  - Moved `index.html` from `public/` to root directory
+  - Updated environment variables from `REACT_APP_` to `VITE_` prefix
+  - Converted all `require()` statements to `import` for assets
+  - Renamed `src/index.js` to `src/index.jsx`
+  - Updated `serviceWorker.js` to use `import.meta.env` instead of `process.env`
+  - Successfully tested build and development server
+  - Updated documentation (README.md, CLAUDE.md) with Vite information
+- **Benefits of migration:**
+  - Faster development server with instant Hot Module Replacement (HMR)
+  - Significantly faster build times
+  - Smaller bundle sizes with better tree-shaking
+  - Modern tooling with better DX
+
+### 2025-11-17 - Documentation
 - Created comprehensive CLAUDE.md documentation
 - Analyzed repository structure
 - Documented multi-version system
