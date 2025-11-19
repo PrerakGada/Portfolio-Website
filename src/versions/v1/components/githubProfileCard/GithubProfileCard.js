@@ -1,5 +1,4 @@
 import React from "react";
-import "./GithubProfileCard.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {contactInfo, isHireable} from "../../../../shared/data/portfolio";
 import emoji from "react-easy-emoji";
@@ -14,16 +13,20 @@ export default function GithubProfileCard({prof}) {
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="contact">
-        <h1 className="prof-title">Reach Out to me!</h1>
-        <div className="row">
-          <div className="main-content-profile">
-            <div className="blog-header">
-              <p className="subTitle blog-subtitle">{contactInfo.subtitle}</p>
+        <h1 className="mb-6 text-[40px] font-normal max-md:text-center max-md:text-[32px]">
+          Reach Out to me!
+        </h1>
+        <div className="flex flex-col-reverse items-center gap-10 md:flex-row">
+          <div className="w-full text-left md:w-3/5 lg:w-2/3">
+            <div className="mb-4">
+              <p className="text-base text-[var(--color-subtitle)]">{contactInfo.subtitle}</p>
             </div>
-            <h2 className="bio-text">"{emoji(String(prof.bio))}"</h2>
+            <h2 className="bio-text mb-4 text-[22px] leading-[30px] max-md:text-center max-md:text-[16px]">
+              "{emoji(String(prof.bio))}"
+            </h2>
             {prof.location !== null && (
-              <div className="location-div">
-                <span className="desc-prof">
+              <div>
+                <span className="flex items-center gap-2 text-[19px] leading-[45px] max-md:justify-center max-md:text-[16px] max-md:leading-[30px]">
                   <svg
                     viewBox="-0.5 -2 20 19"
                     version="1.1"
@@ -41,18 +44,18 @@ export default function GithubProfileCard({prof}) {
                 </span>
               </div>
             )}
-            <div className="opp-div">
-              <span className="desc-prof">
+            <div className="pb-4">
+              <span className="block text-[19px] leading-[45px] max-md:text-center max-md:text-[16px] max-md:leading-[30px]">
                 Open for opportunities: {prof.hireable}
               </span>
             </div>
             <SocialMedia />
           </div>
-          <div className="image-content-profile">
+          <div className="w-full text-center md:w-2/5 lg:w-1/3">
             <img
               src={prof.avatarUrl}
               alt={prof.name}
-              className="profile-image"
+              className="profile-image mx-auto max-w-[350px] rounded-full border-[0.5rem] border-[var(--github-card-border)] shadow-[0_30px_30px_-30px_var(--shadow-light)] transition-all duration-300 hover:shadow-none max-md:max-w-[250px]"
             />
           </div>
         </div>

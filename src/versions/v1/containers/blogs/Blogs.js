@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from "react";
-import "./Blog.css";
 import BlogCard from "../../components/blogCard/BlogCard";
 import {blogSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -49,18 +48,16 @@ export default function Blogs() {
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="blogs">
-        <div className="blog-header">
-          <h1 className="blog-header-text">{blogSection.title}</h1>
-          <p
-            className={
-              isDark ? "dark-mode blog-subtitle" : "subTitle blog-subtitle"
-            }
-          >
+        <div className="text-center">
+          <h1 className="text-5xl font-normal leading-tight text-[var(--color-title)] max-xl:text-4xl max-md:text-3xl">
+            {blogSection.title}
+          </h1>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-subtitle)]">
             {blogSection.subtitle}
           </p>
         </div>
-        <div className="blog-main-div">
-          <div className="blog-text-div">
+        <div className="mt-10">
+          <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
             {blogSection.displayMediumBlogs !== "true" ||
             mediumBlogs === "Error"
               ? blogSection.blogs.map((blog, i) => {

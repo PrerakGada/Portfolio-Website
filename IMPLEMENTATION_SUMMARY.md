@@ -6,6 +6,24 @@ Your portfolio has been successfully transformed into a multi-version system sup
 
 ## 🎉 What Was Accomplished
 
+### ♻️ Tailwind Migration Progress (2025-11-20)
+
+- ✅ Converted the v1 Greeting, Skills, Contact, and Scroll-to-top sections to pure Tailwind utility classes (removed `Greeting.css`, `Skills.css`, `Contact.css`, `Top.css`).
+- ✅ Centralized the shared `.main` layout class plus new `animate-wave-hand` utility inside `src/index.css` so remaining sections keep their layout while we continue migrating.
+- ✅ Strengthened accessibility in the scroll-to-top button with focus-visible rings and smooth scrolling.
+
+#### Remaining CSS buckets & recommended next steps
+
+1. **v1 containers/components still using `.css` files** – Most rely on repeated layout helpers; they can be tackled in small batches (e.g., `Projects`, `Blogs`, `Achievement`) by mirroring the Tailwind patterns used above.
+2. **v1 animated sections** – Files such as `loading.css` and `splashScreen.css` contain bespoke keyframes; keep them for now or migrate keyframes into `@layer utilities` the way we handled the waving emoji.
+3. **v2 design system (`src/versions/v2/styles/global.css` + container CSS)** – These files encode design tokens, grid templates, and gradients unique to the modern layout. Keep them until we have equivalent Tailwind component abstractions or CSS variables for every token.
+
+When continuing the migration, favor:
+
+- Extracting any reusable spacing/width presets into shared Tailwind classes (e.g., `section-shell`, `content-grid`).
+- Moving custom animations into `@layer utilities` so components can stay JSX-only.
+- Deleting each `.css` file immediately after its component is refactored to prevent regressions.
+
 ### 1. **Architecture Restructure**
 - ✅ Installed React Router v5 (compatible with React 16)
 - ✅ Created version-based folder structure

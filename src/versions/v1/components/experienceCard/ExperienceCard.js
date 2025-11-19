@@ -1,5 +1,4 @@
 import React, {useState, createRef} from "react";
-import "./ExperienceCard.css";
 import ColorThief from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {
@@ -31,7 +30,9 @@ export default function ExperienceCard({cardInfo, isDark}) {
       ? descBullets.map((item, i) => (
           <li
             key={i}
-            className={isDark ? "subTitle dark-mode-text" : "subTitle"}
+            className={`${
+              isDark ? "text-[var(--color-text-dark)]" : "text-[var(--color-text)]"
+            } text-base`}
           >
             {item}
           </li>
@@ -40,54 +41,45 @@ export default function ExperienceCard({cardInfo, isDark}) {
   };
 
   return (
-    <div className={isDark ? "experience-card-dark" : "experience-card"}>
-      <div style={{background: rgb(colorArrays)}} className="experience-banner">
-        <div className="experience-blurred_div"></div>
-        <div className="experience-div-company">
-          <h5 className="experience-text-company">{cardInfo.company}</h5>
+    <div
+      className={`relative overflow-hidden rounded-xl border border-[var(--color-border-light)] transition-shadow duration-300 ${
+        isDark
+          ? "bg-[var(--color-dark-background)] text-[var(--color-text-dark)] shadow-[0_10px_30px_-15px_var(--shadow-light-dark)] hover:shadow-[0_20px_30px_-10px_var(--shadow-light-dark)]"
+          : "bg-[var(--surface-card)] text-[var(--color-text)] shadow-[0_10px_30px_-15px_var(--shadow-light-dark)] hover:shadow-[0_20px_30px_-10px_var(--shadow-light-dark)]"
+      }`}
+    >
+      <div
+        style={{background: rgb(colorArrays) ?? "var(--gradient-experience-banner)"}}
+        className="experience-banner relative flex h-44 items-end justify-center overflow-hidden rounded-t-xl"
+      >
+        <div className="experience-blurred_div absolute inset-0 bg-[var(--gradient-experience-blur)] blur-md"></div>
+        <div className="experience-div-company relative z-10 flex w-full items-center justify-center bg-gradient-to-t from-black/40 via-transparent to-transparent p-6 text-center">
+          <h5 className="experience-text-company m-0 truncate text-[25px] font-bold text-[var(--color-light-background-1)]">
+            {cardInfo.company}
+          </h5>
         </div>
 
         <img
           ref={imgRef}
-          className="experience-roundedimg"
+          className="experience-roundedimg absolute left-1/2 top-32 h-32 w-32 -translate-x-1/2 rounded-full object-cover shadow-[0_8px_16px_var(--shadow-light-darker)] md:top-28 md:h-28 md:w-28"
           src={cardInfo.companylogo}
           alt={cardInfo.company}
           onLoad={() => getColorArrays()}
-          onError={(e) => {
+          onError={() => {
             console.warn("Image failed to load:", cardInfo.company);
-            setColorArrays([40, 44, 52]); // Fallback color
+            setColorArrays([40, 44, 52]);
           }}
         />
       </div>
-      <div className="experience-text-details">
-        <h5
-          className={
-            isDark
-              ? "experience-text-role dark-mode-text"
-              : "experience-text-role"
-          }
-        >
+      <div className="experience-text-details px-6 pb-8 pt-20 text-center">
+        <h5 className="experience-text-role text-[25px] font-bold md:text-[22px]">
           {cardInfo.role}
         </h5>
-        <h5
-          className={
-            isDark
-              ? "experience-text-date dark-mode-text"
-              : "experience-text-date"
-          }
-        >
+        <h5 className="experience-text-date pt-3 text-[20px] font-semibold md:text-[18px]">
           {cardInfo.date}
         </h5>
-        <p
-          className={
-            isDark
-              ? "subTitle experience-text-desc dark-mode-text"
-              : "subTitle experience-text-desc"
-          }
-        >
-          {cardInfo.desc}
-        </p>
-        <ul>
+        <p className="experience-text-desc mt-4 text-base">{cardInfo.desc}</p>
+        <ul className="mt-4 space-y-2">
           <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
         </ul>
       </div>

@@ -1,15 +1,17 @@
 import React, {useContext} from "react";
-import "./Footer.css";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import StyleContext from "../../../../shared/contexts/StyleContext";
 
 export default function Footer() {
   const {isDark} = useContext(StyleContext);
+  const textClasses = `footer-text text-center text-[var(--color-subtitle)] ${
+    isDark ? "!text-[var(--color-text-dark)]" : ""
+  }`;
   return (
     <Fade bottom duration={1000} distance="5px">
-      <div className="footer-div">
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
+      <div className="footer-div mt-8 pb-4">
+        <p className={textClasses}>
           {emoji("Made with ❤️ by Prerak Gada")}
         </p>
         {/* <p className={isDark ? "dark-mode footer-text" : "footer-text"}>

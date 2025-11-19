@@ -2,8 +2,7 @@ import React, { Suspense, lazy, useContext, useEffect, useState } from "react";
 import Button from "../../components/button/Button";
 import Loading from "../../containers/loading/Loading";
 import StyleContext from "../../../../shared/contexts/StyleContext";
-import { openSource, socialMediaLinks } from "../../../../shared/data/portfolio";
-import "./Project.css";
+import {openSource, socialMediaLinks} from "../../../../shared/data/portfolio";
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")
@@ -46,8 +45,10 @@ export default function Projects() {
     return (
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
-          <div className="repo-cards-div-main">
+          <h1 className="text-4xl font-normal leading-tight text-[var(--color-title)] max-xl:text-3xl max-md:text-2xl max-md:text-center">
+            Open Source Projects
+          </h1>
+          <div className="mt-8 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
             {repo.map((v, i) => {
               if (!v) {
                 console.error(
@@ -61,7 +62,7 @@ export default function Projects() {
           </div>
           <Button
             text={"More Projects"}
-            className="project-button"
+            className="mt-6 flex justify-center"
             href={socialMediaLinks.github}
             newTab={true}
           />

@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./WorkExperience.css";
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import {workExperiences} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -13,10 +12,12 @@ export default function WorkExperience() {
 
   if (workExperiences.display) {
     const content = (
-      <div className="experience-container" id="workExperience">
-        <div>
-          <h1 className="experience-heading">Experiences</h1>
-          <div className="experience-cards-div">
+      <div className="main" id="workExperience">
+        <div className="space-y-8">
+          <h1 className="text-5xl font-normal leading-tight text-[var(--color-title)] max-xl:text-4xl max-md:text-center max-md:text-3xl">
+            Experiences
+          </h1>
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(290px,1fr))]">
             {workExperiences.experience.map((card, i) => {
               return (
                 <ExperienceCard

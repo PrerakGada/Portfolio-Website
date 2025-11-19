@@ -207,6 +207,46 @@ code {
   }
 }
 
+@layer components {
+  .main {
+    width: min(90%, 1100px);
+    padding: 20px 10px;
+    margin: 4rem auto 0;
+  }
+}
+
+@layer utilities {
+  @keyframes wave-hand {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(-10deg);
+    }
+    20% {
+      transform: rotate(12deg);
+    }
+    30% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(9deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .animate-wave-hand {
+    animation: wave-hand 1.8s infinite;
+    transform-origin: 70% 70%;
+    display: inline-flex;
+  }
+}
+
 @media (max-width: 1380px) {
   body {
     font-size: 15px;

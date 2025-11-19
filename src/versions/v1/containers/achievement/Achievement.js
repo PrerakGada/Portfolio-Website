@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./Achievement.css";
 import AchievementCard from "../../components/achievementCard/AchievementCard";
 import {achievementSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
@@ -12,28 +11,16 @@ export default function Achievement() {
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="achievements">
-        <div className="achievement-main-div">
-          <div className="achievement-header">
-            <h1
-              className={
-                isDark
-                  ? "dark-mode heading achievement-heading"
-                  : "heading achievement-heading"
-              }
-            >
+        <div className="space-y-6">
+          <div className="text-center">
+            <h1 className="text-5xl font-normal leading-tight text-[var(--color-title)] max-xl:text-4xl max-md:text-3xl">
               {achievementSection.title}
             </h1>
-            <p
-              className={
-                isDark
-                  ? "dark-mode subTitle achievement-subtitle"
-                  : "subTitle achievement-subtitle"
-              }
-            >
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-subtitle)]">
               {achievementSection.subtitle}
             </p>
           </div>
-          <div className="achievement-cards-div">
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
             {achievementSection.achievementsCards.map((card, i) => {
               return (
                 <AchievementCard

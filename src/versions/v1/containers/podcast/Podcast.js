@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import "./Podcast.css";
 import {podcastSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../../../shared/contexts/StyleContext";
@@ -16,19 +15,15 @@ export default function Podcast() {
   return (
     <Fade bottom duration={1000} distance="20px">
       <div className="main">
-        <div className="podcast-header">
-          <h1 className="podcast-header-title">{podcastSection.title}</h1>
-          <p
-            className={
-              isDark
-                ? "dark-mode podcast-header-subtitle"
-                : "subTitle podcast-header-subtitle"
-            }
-          >
+        <div className="text-center">
+          <h1 className="text-5xl font-normal leading-tight text-[var(--color-title)] max-md:text-3xl">
+            {podcastSection.title}
+          </h1>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--color-subtitle)]">
             {podcastSection.subtitle}
           </p>
         </div>
-        <div className="podcast-main-div">
+        <div className="mt-8 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]">
           {podcastSection.podcast.map((podcastLink, i) => {
             if (!podcastLink) {
               console.log(
@@ -38,7 +33,7 @@ export default function Podcast() {
             return (
               <div key={i}>
                 <iframe
-                  className="podcast"
+                  className="h-[200px] w-full rounded-lg border border-[var(--color-border-light)] shadow-sm"
                   src={podcastLink}
                   frameBorder="0"
                   scrolling="no"
