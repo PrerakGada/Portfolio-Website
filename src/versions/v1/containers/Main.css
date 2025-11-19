@@ -1,0 +1,7 @@
+@layer components {
+  .dark-mode {
+    background-color: var(--color-dark-background);
+    color: var(--color-text-dark);
+    transition: 0.1s ease-in-out;
+  }
+}

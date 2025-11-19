@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { socialMediaLinks, contactInfo } from "../../../../shared/data/portfolio";
-import "./Footer.scss";
+import "./Footer.css";
 
 const Footer = () => {
   const [email, setEmail] = useState("");

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Top.scss";
+import "./Top.css";
 
 export default function Top() {
   function TopEvent() {

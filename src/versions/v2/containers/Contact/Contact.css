@@ -1,0 +1,135 @@
+@layer components {
+  .v2-contact {
+    background-color: var(--v2-bg-white);
+  }
+
+  .v2-contact-title {
+    font-size: var(--v2-font-size-4xl);
+    font-weight: var(--v2-font-weight-bold);
+    color: var(--v2-text-dark);
+    margin-bottom: var(--v2-spacing-xxl);
+  }
+
+  @media (max-width: 768px) {
+    .v2-contact-title {
+      font-size: var(--v2-font-size-3xl);
+      margin-bottom: var(--v2-spacing-xl);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .v2-contact-title {
+      font-size: var(--v2-font-size-2xl);
+    }
+  }
+
+  .v2-contact-form {
+    max-width: 800px;
+    margin: 0 auto var(--v2-spacing-xl);
+  }
+
+  .v2-form-group {
+    display: flex;
+    align-items: center;
+    gap: var(--v2-spacing-md);
+    background-color: var(--v2-bg-white);
+    border: 2px solid var(--v2-border-light);
+    border-radius: var(--v2-radius-full);
+    padding: 8px 8px 8px 24px;
+    box-shadow: var(--v2-shadow-md);
+  }
+
+  @media (max-width: 768px) {
+    .v2-form-group {
+      flex-wrap: wrap;
+      padding: 12px;
+    }
+  }
+
+  .v2-input-icon {
+    flex-shrink: 0;
+  }
+
+  .v2-input-icon svg {
+    display: block;
+  }
+
+  .v2-email-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: var(--v2-font-size-base);
+    padding: 12px;
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    .v2-email-input {
+      width: 100%;
+      padding: 8px;
+    }
+  }
+
+  .v2-email-input::placeholder {
+    color: var(--v2-text-muted);
+  }
+
+  .v2-send-btn {
+    background-color: var(--v2-primary-orange);
+    color: var(--v2-text-light);
+    padding: 16px 48px;
+    border-radius: var(--v2-radius-full);
+    font-size: var(--v2-font-size-base);
+    font-weight: var(--v2-font-weight-semibold);
+    transition: all var(--v2-transition-base);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .v2-send-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .v2-send-btn:hover {
+    background-color: color-mix(in srgb, var(--v2-primary-orange) 90%, black);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 140, 66, 0.4);
+  }
+
+  .v2-contact-badges {
+    display: flex;
+    justify-content: center;
+    gap: var(--v2-spacing-xl);
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .v2-contact-badges {
+      gap: var(--v2-spacing-lg);
+    }
+  }
+
+  .v2-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--v2-spacing-sm);
+    font-size: var(--v2-font-size-base);
+    color: var(--v2-text-dark);
+  }
+
+  @media (max-width: 768px) {
+    .v2-badge {
+      font-size: var(--v2-font-size-sm);
+    }
+  }
+
+  .v2-badge-icon {
+    font-size: var(--v2-font-size-xl);
+  }
+
+  .v2-badge-text {
+    font-weight: var(--v2-font-weight-medium);
+  }
+}

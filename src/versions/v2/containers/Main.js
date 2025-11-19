@@ -9,8 +9,8 @@ import Testimonials from "./Testimonials/Testimonials";
 import Contact from "./Contact/Contact";
 import Blog from "./Blog/Blog";
 import Footer from "../components/Footer/Footer";
-import "../styles/global.scss";
-import "./Main.scss";
+import "../styles/global.css";
+import "./Main.css";
 
 /**
  * Version 2 - Portfolio Design

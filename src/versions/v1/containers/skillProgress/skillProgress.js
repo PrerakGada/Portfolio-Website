@@ -1,5 +1,5 @@
 import React from "react";
-import "./Progress.scss";
+import "./Progress.css";
 import {illustration, techStack} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";
 import Build from "../../../../assets/lottie/build";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Header.scss";
+import "./Header.css";
 
 const Header = () => {
   const [activeNav, setActiveNav] = useState("Home");

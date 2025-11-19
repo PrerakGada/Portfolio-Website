@@ -1,6 +1,6 @@
 import React from "react";
 import { workExperiences } from "../../../../shared/data/portfolio";
-import "./WorkExperience.scss";
+import "./WorkExperience.css";
 
 const WorkExperience = () => {
   // Use actual data or fallback to sample data

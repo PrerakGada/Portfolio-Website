@@ -1,5 +1,5 @@
 import React from "react";
-import "./WhyHireMe.scss";
+import "./WhyHireMe.css";
 
 const WhyHireMe = () => {
   const stats = [

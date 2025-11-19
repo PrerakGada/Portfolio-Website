@@ -1,0 +1,187 @@
+@layer components {
+  .v2-why-hire-me {
+    background-color: var(--v2-bg-light);
+  }
+
+  .v2-why-hire-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--v2-spacing-xxxl);
+    align-items: center;
+  }
+
+  @media (max-width: 1024px) {
+    .v2-why-hire-grid {
+      gap: var(--v2-spacing-xxl);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .v2-why-hire-grid {
+      grid-template-columns: 1fr;
+      gap: var(--v2-spacing-xl);
+    }
+  }
+
+  .v2-why-hire-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+  }
+
+  @media (max-width: 768px) {
+    .v2-why-hire-image {
+      min-height: 400px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .v2-why-hire-image {
+      min-height: 350px;
+    }
+  }
+
+  .v2-why-hire-gradient-bg {
+    position: absolute;
+    width: 450px;
+    height: 550px;
+    background: radial-gradient(ellipse, rgba(255, 140, 66, 0.35) 0%, rgba(255, 140, 66, 0.1) 50%, rgba(255, 140, 66, 0) 70%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 0;
+  }
+
+  @media (max-width: 768px) {
+    .v2-why-hire-gradient-bg {
+      width: 350px;
+      height: 450px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .v2-why-hire-gradient-bg {
+      width: 280px;
+      height: 380px;
+    }
+  }
+
+  .v2-why-hire-photo {
+    position: relative;
+    z-index: 1;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .v2-why-hire-photo {
+      width: 320px;
+      height: 380px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .v2-why-hire-photo {
+      width: 260px;
+      height: 320px;
+    }
+  }
+
+  .v2-why-hire-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  .v2-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+
+  .v2-photo-placeholder svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .v2-why-hire-content {
+      text-align: center;
+    }
+  }
+
+  .v2-why-hire-description {
+    font-size: var(--v2-font-size-md);
+    color: var(--v2-text-gray);
+    line-height: var(--v2-line-height-relaxed);
+    margin: var(--v2-spacing-lg) 0 var(--v2-spacing-xl);
+    max-width: 500px;
+  }
+
+  @media (max-width: 768px) {
+    .v2-why-hire-description {
+      font-size: var(--v2-font-size-base);
+      margin: var(--v2-spacing-md) 0 var(--v2-spacing-lg);
+      max-width: 100%;
+    }
+  }
+
+  .v2-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--v2-spacing-xl);
+    margin-bottom: var(--v2-spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .v2-stats-grid {
+      gap: var(--v2-spacing-lg);
+      margin-bottom: var(--v2-spacing-lg);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .v2-stats-grid {
+      grid-template-columns: 1fr;
+      gap: var(--v2-spacing-md);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .v2-stat-item {
+      text-align: center;
+    }
+  }
+
+  .v2-stat-number {
+    font-size: var(--v2-font-size-4xl);
+    font-weight: var(--v2-font-weight-extrabold);
+    color: var(--v2-text-dark);
+    margin-bottom: var(--v2-spacing-xs);
+  }
+
+  @media (max-width: 768px) {
+    .v2-stat-number {
+      font-size: var(--v2-font-size-3xl);
+    }
+  }
+
+  .v2-stat-label {
+    font-size: var(--v2-font-size-md);
+    color: var(--v2-text-gray);
+    font-weight: var(--v2-font-weight-medium);
+  }
+
+  @media (max-width: 768px) {
+    .v2-stat-label {
+      font-size: var(--v2-font-size-base);
+    }
+  }
+}

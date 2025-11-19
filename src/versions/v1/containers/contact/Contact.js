@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./Contact.scss";
+import "./Contact.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import {illustration, contactInfo} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";

@@ -1,0 +1,91 @@
+@layer components {
+  .card-image {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    color: var(--color-title);
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 15px 0 0;
+  }
+
+  .card-subtitle {
+    color: var(--color-card-subtitle);
+    font-size: 17px;
+    line-height: 1.5rem;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-light-background-2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-border-light);
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .project-card-light {
+    box-shadow: 0 10px 30px -15px var(--shadow-light-dark);
+  }
+
+  .project-card-dark {
+    box-shadow: 0 10px 30px -15px var(--shadow-dark);
+  }
+
+  .project-detail {
+    text-align: center;
+  }
+
+  .project-card-light:hover {
+    box-shadow: 0 20px 30px -10px var(--shadow-light-dark);
+  }
+
+  .project-card-dark:hover {
+    box-shadow: 0 20px 30px -10px var(--shadow-dark);
+  }
+
+  .project-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .project-card-footer span.project-tag {
+    background-color: var(--color-button);
+    color: var(--color-light-background-3);
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    height: 2em;
+    line-height: 1.5;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0 0.75em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .project-subtitle {
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+}

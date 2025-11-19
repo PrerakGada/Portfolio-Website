@@ -1,6 +1,6 @@
 import React from "react";
 import { greeting } from "../../../../shared/data/portfolio";
-import "./Hero.scss";
+import "./Hero.css";
 
 const Hero = () => {
   // Sample testimonial data - can be moved to portfolio.js later

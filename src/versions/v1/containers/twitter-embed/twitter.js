@@ -1,5 +1,5 @@
 import React, {Suspense, useContext} from "react";
-import "./twitter.scss";
+import "./twitter.css";
 import Loading from "../loading/Loading";
 import {TwitterTimelineEmbed} from "react-twitter-embed";
 import {twitterDetails} from "../../../../shared/data/portfolio";

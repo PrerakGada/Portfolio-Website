@@ -1,0 +1,16 @@
+@layer components {
+  .v2-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--v2-bg-white);
+  }
+
+  .v2-app * {
+    box-sizing: border-box;
+  }
+
+  .v2-main {
+    flex: 1;
+  }
+}

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./Talks.scss";
+import "./Talks.css";
 import TalkCard from "../../components/talkCard/TalkCard";
 import {talkSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";

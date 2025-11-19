@@ -1,6 +1,6 @@
 import React from "react";
 import { blogSection } from "../../../../shared/data/portfolio";
-import "./Blog.scss";
+import "./Blog.css";
 
 const Blog = () => {
   const sampleBlogs = [

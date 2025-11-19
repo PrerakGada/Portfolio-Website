@@ -5,7 +5,7 @@ import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import StyleContext from "../../../../shared/contexts/StyleContext";
 import { illustration, skillsSection } from "../../../../shared/data/portfolio";
-import "./Skills.scss";
+import "./Skills.css";
 import developerActivity from "../../../../assets/images/developerActivity.svg";
 
 export default function Skills() {
