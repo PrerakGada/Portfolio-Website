@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./Footer.scss";
+import "./Footer.css";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
 import StyleContext from "../../../../shared/contexts/StyleContext";

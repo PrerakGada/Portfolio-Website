@@ -1,0 +1,51 @@
+@layer components {
+  .software-skills-main-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .dev-icons {
+    padding-left: 0;
+    list-style: none;
+    font-size: 3rem;
+    margin: 0;
+    text-align: center;
+  }
+
+  .software-skill-inline {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .software-skill-inline > i {
+    color: var(--color-subtitle);
+    transition: color 0.2s ease;
+  }
+
+  .software-skill-inline > p {
+    color: var(--color-subtitle);
+    font-size: 0.625rem;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease;
+  }
+
+  .software-skill-inline > i:hover,
+  .software-skill-inline > i:hover ~ p {
+    color: var(--color-skills);
+  }
+
+  .dark-mode .software-skill-inline > i,
+  .dark-mode .software-skill-inline > p {
+    color: var(--color-text-dark);
+  }
+
+  .dark-mode .software-skill-inline > i:hover,
+  .dark-mode .software-skill-inline > i:hover ~ p {
+    color: var(--color-skills);
+  }
+}

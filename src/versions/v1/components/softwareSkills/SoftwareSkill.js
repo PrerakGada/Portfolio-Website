@@ -1,6 +1,6 @@
 import React from "react";
 import { skillsSection } from "../../../../shared/data/portfolio";
-import "./SoftwareSkill.scss";
+import "./SoftwareSkill.css";
 
 export default function SoftwareSkill() {
   return (

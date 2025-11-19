@@ -21,14 +21,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src")
     }
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        // Allow SCSS files to import other SCSS files
-        additionalData: ""
-      }
-    }
-  },
   build: {
     outDir: "build",
     sourcemap: false,

@@ -1,0 +1,15 @@
+@layer components {
+  .footer-text {
+    text-align: center;
+    color: var(--color-subtitle) !important;
+  }
+
+  .dark-mode .footer-text {
+    color: var(--color-text-dark) !important;
+  }
+
+  .footer-div {
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+  }
+}
