@@ -1,0 +1,46 @@
+@layer components {
+  .podcast-header-title {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .podcast-header-subtitle,
+  .subTitle {
+    color: var(--color-subtitle);
+  }
+
+  .podcast {
+    width: 600px;
+    max-width: 100%;
+  }
+
+  .podcast-main-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .podcast-header-title {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .podcast-header-subtitle {
+      font-size: 16px;
+      line-height: normal;
+      text-align: center;
+    }
+
+    .podcast {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .podcast-main-div {
+      text-align: center;
+    }
+  }
+}

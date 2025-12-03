@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Services.scss";
+import "./Services.css";
 
 const Services = () => {
   const [activeSlide, setActiveSlide] = useState(0);

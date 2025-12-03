@@ -1,0 +1,93 @@
+@layer components {
+  .repo-card-div {
+    color: var(--github-card-text);
+    background-color: var(--color-light-background-2);
+    box-shadow: var(--shadow-light-dark) 0 10px 30px -15px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .repo-card-div:hover {
+    box-shadow: var(--shadow-light-dark) 0 20px 30px -10px;
+  }
+
+  .repo-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--github-card-stats);
+  }
+
+  .repo-left-stat {
+    flex-grow: 1;
+    display: flex;
+  }
+
+  .language-color {
+    width: 10px;
+    height: 10px;
+    background-color: var(--github-language-bg);
+    margin-right: 0.25rem;
+    border-radius: 999px;
+  }
+
+  .repo-left-stat span {
+    display: flex;
+    align-items: center;
+    margin-right: 0.75rem;
+  }
+
+  .repo-name-div {
+    display: flex;
+    align-items: center;
+  }
+
+  .repo-svg {
+    margin-right: 0.5rem;
+    min-width: 16px;
+  }
+
+  .repo-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: var(--github-card-name);
+    margin-bottom: 0.75rem;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    overflow: hidden;
+    margin: 0;
+    height: 30px;
+  }
+
+  .repo-star-svg {
+    margin-right: 0.3rem;
+  }
+
+  .repo-description {
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .dark-card-mode {
+    background-color: var(--color-dark-background);
+    color: var(--color-text-dark);
+  }
+
+  .dark-card-mode p {
+    color: var(--color-text-dark);
+  }
+
+  .dark-card-mode .repo-svg {
+    fill: var(--color-text-dark);
+  }
+
+  .dark-card-mode:hover {
+    background-color: var(--color-button) !important;
+    box-shadow: 0 0 16px var(--shadow-dark);
+  }
+}

@@ -3,7 +3,7 @@ import Button from "../../components/button/Button";
 import Loading from "../../containers/loading/Loading";
 import StyleContext from "../../../../shared/contexts/StyleContext";
 import { openSource, socialMediaLinks } from "../../../../shared/data/portfolio";
-import "./Project.scss";
+import "./Project.css";
 export default function Projects() {
   const GithubRepoCard = lazy(() =>
     import("../../components/githubRepoCard/GithubRepoCard")

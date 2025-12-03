@@ -1,5 +1,5 @@
 import React from "react";
-import "./BlogCard.scss";
+import "./BlogCard.css";
 
 export default function BlogCard({blog, isDark}) {
   function openUrlInNewTab(url, name) {

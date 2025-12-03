@@ -6,7 +6,7 @@ This is a **multi-version React-based portfolio website** built with Vite. It su
 
 **Live Site:** https://prerak.hungrybrain.in
 **Owner:** Prerak Gada
-**Primary Tech:** React 16.10.2, Vite 5, SASS, React Router, Firebase Hosting
+**Primary Tech:** React 16.10.2, Vite 5, Tailwind CSS 4, React Router, Firebase Hosting
 
 **Note:** This project was migrated from Create React App to Vite for faster development and build times.
 
@@ -19,7 +19,7 @@ This is a **multi-version React-based portfolio website** built with Vite. It su
 1. **Update portfolio content** → Edit `/src/shared/data/portfolio.js`
 2. **Change default version** → Edit `/src/versions/config.js`
 3. **Add new component** → Create in `/src/versions/v1/components/` or `/src/versions/v2/components/`
-4. **Modify global colors** → Edit `/src/_globalColor.scss`
+4. **Modify global colors** → Edit `/src/index.css`
 5. **Update dependencies** → Modify `/package.json` and run `npm install`
 
 ### Development Commands
@@ -40,7 +40,7 @@ npm run deploy     # Deploy to GitHub Pages
 - **React 16.10.2** - UI library (class & functional components)
 - **Vite 5** - Build tool and dev server (fast HMR, optimized builds)
 - **React Router DOM 5.3.4** - Client-side routing
-- **SASS 1.32.8** - CSS preprocessing (44+ SCSS files)
+- **Tailwind CSS v4 + CSS custom properties** - Utility-first styling with shared design tokens
 
 ### Key Dependencies
 - **react-lottie** - JSON-based animations
@@ -119,7 +119,7 @@ npm run deploy     # Deploy to GitHub Pages
 │   │       │   ├── Portfolio/
 │   │       │   └── ... (10+ containers)
 │   │       └── styles/              # V2 specific styling
-│   │           └── _variables.scss  # Design tokens
+│   │           └── global.css       # Version-specific Tailwind layers & tokens
 │   │
 │   ├── assets/                      # Media & static resources
 │   │   ├── certificates/            # Certificate images
@@ -128,9 +128,7 @@ npm run deploy     # Deploy to GitHub Pages
 │   │   ├── skills/                  # Skill icons (SVG)
 │   │   └── fonts/                   # Custom fonts (Agustina, Montserrat)
 │   │
-│   ├── _globalColor.scss            # 🎨 Global color palette
-│   ├── App.scss                     # Root styles
-│   └── index.css                    # Global CSS reset/base
+│   └── index.css                    # Global Tailwind layers & CSS variables
 │
 ├── Configuration Files
 │   ├── package.json                 # Dependencies & scripts
@@ -190,10 +188,11 @@ export const DEFAULT_VERSION = "v2"; // Change to "v1" or "v2"
 
 **When to edit:** User wants to change default portfolio version
 
-#### `/src/_globalColor.scss`
-Global color palette used across all versions.
+#### `/src/index.css`
 
-**When to edit:** User wants to change theme colors globally
+Global CSS reset plus Tailwind layers and CSS custom properties shared across all versions.
+
+**When to edit:** User wants to change theme colors or tokens globally
 
 #### `/src/routes/VersionRouter.js`
 Main routing logic with lazy loading for v1 and v2.
@@ -243,7 +242,7 @@ MEDIUM_USERNAME = "prerakgada"
 
 **Each version is independent:**
 - Has its own components and containers
-- Has its own styling (SCSS files)
+- Has its own styling layers (Tailwind utilities + component CSS)
 - Cannot import components from other versions
 - Shares data from `/src/shared/data/portfolio.js`
 
@@ -295,35 +294,37 @@ export const VERSIONS = {
 
 ## Styling System
 
-### Global Colors (`/src/_globalColor.scss`)
+### Global Styles & Tokens (`/src/index.css`)
 
-Defines global SCSS variables:
-- Button colors (`$buttonColor`, `$buttonHover`)
-- Text colors (light & dark theme)
-- Background colors
-- Box shadows
-- Borders
-- Social media icon colors
+Defines the root CSS custom properties (color palette, spacing scale, typography) and Tailwind `@layer base` rules used everywhere.
 
-**Usage in components:**
-```scss
-@import "../../../../_globalColor";
+- `:root` holds theme tokens shared by v1 and v2
+- Light/Dark specific tokens live under `.light-mode` / `.dark-mode`
+- Tailwind `@layer components` snippets provide shared primitives (e.g., buttons)
 
-.my-component {
-  color: $textColor;
-  background: $lightBackground1;
+**Usage tips:** Reference tokens with `var(--token-name)` inside CSS or pair them with Tailwind utilities in JSX.
+
+```css
+:root {
+  --surface-primary: #040718;
+  --accent-orange: #ff8c42;
+}
+
+@layer base {
+  body {
+    background: var(--surface-primary);
+    color: var(--text-primary);
+  }
 }
 ```
 
-### V2 Design System (`/src/versions/v2/styles/_variables.scss`)
+### V2 Design System (`/src/versions/v2/styles/global.css`)
 
-Modern design tokens:
-- **Colors:** Primary Orange (#FF8C42), Dark (#2B2D3A)
-- **Spacing:** 8px - 96px scale
-- **Typography:** Poppins font family, 6 font weights
-- **Shadows:** Multiple shadow variants
-- **Breakpoints:** 320px (mobile) - 1440px (wide)
-- **Z-index:** Layering system
+Extends the global tokens with `--v2-*` variables plus `@layer components` definitions specific to the modern design (hero cards, timeline blocks, etc.).
+
+- Hosts layout helpers unique to v2 (grid templates, glassmorphism styles)
+- Provides responsive clamps and animation keyframes shared across v2 containers
+- Safe place for any design tokens that should not affect v1
 
 ### Theme Support (Light/Dark Mode)
 
@@ -352,18 +353,30 @@ function MyComponent() {
 
 ### Component Styling Pattern
 
-Each component has its own SCSS file:
+Each component keeps a sibling CSS file (usually `ComponentName.css`) where Tailwind `@apply` or custom selectors live alongside utility classes used directly in JSX.
+
 ```
 ComponentName/
 ├── ComponentName.js
-└── ComponentName.scss
+└── ComponentName.css
 ```
 
 **Import pattern:**
+
 ```javascript
-// ComponentName.js
 import React from "react";
-import "./ComponentName.scss";
+import "./ComponentName.css";
+```
+
+**Inside the CSS file:**
+
+```css
+@layer components {
+  .component-name {
+    @apply flex flex-col gap-4 rounded-3xl p-6;
+    background: var(--surface-elevated);
+  }
+}
 ```
 
 ---
@@ -465,17 +478,12 @@ import logo from "../../../../assets/images/logo.png";
 - PascalCase folder names: `Header/`, `Footer/`, `Hero/`
 - PascalCase component files: `Header.js`, `Footer.js`, `Hero.js`
 
-### 7. SCSS Import Patterns
+### 7. Tailwind Layers & CSS Imports
 
-**Global colors:**
-```scss
-@import "../../../../_globalColor";
-```
-
-**V2 variables:**
-```scss
-@import "../../styles/variables";
-```
+- Keep shared utilities inside `@layer components` blocks in the relevant `ComponentName.css`
+- Use `@apply` sparingly for repeated Tailwind stacks (buttons, cards, badges)
+- Import CSS files with relative paths inside the component once: `import "./Header.css";`
+- Prefer CSS custom properties (`var(--token)`) over duplicating hex values
 
 ### 8. When Adding Dependencies
 
@@ -544,17 +552,21 @@ const workExperiences = {
 **User request:** "Change the primary color to blue"
 
 **Steps:**
-1. Read `/src/_globalColor.scss`
-2. Update color variables (e.g., `$buttonColor`)
-3. Consider updating V2 variables in `/src/versions/v2/styles/_variables.scss`
+1. Read `/src/index.css`
+2. Update the relevant CSS custom properties (e.g., `--accent-primary`)
+3. If the change is v2-specific, also update `/src/versions/v2/styles/global.css`
 
 **Example:**
-```scss
+```css
 /* Before */
-$buttonColor: #55198b;
+:root {
+  --accent-primary: #55198b;
+}
 
 /* After */
-$buttonColor: #1a73e8;
+:root {
+  --accent-primary: #1a73e8;
+}
 ```
 
 ### Task 3: Switch Default Version
@@ -688,7 +700,7 @@ npm run build
 
 **Steps:**
 1. Create component directory: `/src/versions/v2/components/Testimonials/`
-2. Create `Testimonials.js` and `Testimonials.scss`
+2. Create `Testimonials.js` and `Testimonials.css`
 3. Import shared data if needed
 4. Import component in `/src/versions/v2/containers/Main.js`
 5. Add to Main layout
@@ -697,7 +709,7 @@ npm run build
 ```javascript
 // /src/versions/v2/components/Testimonials/Testimonials.js
 import React from "react";
-import "./Testimonials.scss";
+import "./Testimonials.css";
 
 const Testimonials = () => {
   return (
@@ -709,6 +721,13 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
+/* /src/versions/v2/components/Testimonials/Testimonials.css */
+@layer components {
+  .testimonials-section {
+    @apply rounded-3xl bg-white/5 p-10 text-white backdrop-blur;
+  }
+}
 
 // /src/versions/v2/containers/Main.js
 import Testimonials from "../components/Testimonials/Testimonials";
@@ -762,12 +781,12 @@ npm run build
 2. Check for missing imports
 3. Verify file paths are correct
 4. Look for syntax errors
-5. Check SCSS compilation issues
+5. Check Tailwind/PostCSS compilation output
 6. Verify environment variables
 
 **Common issues:**
 - **Module not found:** Check import paths (use `../../../` for shared)
-- **SCSS errors:** Check `@import` paths to `_globalColor.scss`
+- **CSS layer issues:** Ensure component CSS files are imported and Tailwind build ran
 - **Missing dependencies:** Run `npm install`
 - **Environment variables:** Ensure `.env` exists with required values
 
@@ -809,17 +828,12 @@ import logo from "../../../../assets/images/logo.png";
 
 **Always count `../` carefully!**
 
-### 3. SCSS Import Paths
+### 3. CSS Layer Placement
 
-Global color imports vary by file location:
-
-```scss
-// From v1 component
-@import "../../../../_globalColor";
-
-// From v2 component
-@import "../../../../_globalColor";
-
+- Shared tokens live in `src/index.css` and should not be re-declared elsewhere
+- Version-specific utilities belong in `src/versions/<version>/styles/global.css`
+- Component-level overrides go in `ComponentName.css` with `@layer components`
+- Each component must import its CSS file exactly once to register the layer
 // Count carefully based on nesting level
 ```
 
@@ -1120,7 +1134,7 @@ npm audit fix --force
 **Common causes:**
 1. **Syntax errors** - Check error message for file and line
 2. **Missing imports** - Verify all import paths
-3. **SCSS compilation errors** - Check `@import` statements
+3. **Tailwind/PostCSS errors** - Check the build output for missing `@layer` blocks
 4. **Environment variables missing** - Ensure `.env` exists
 
 **Debug steps:**
@@ -1156,14 +1170,14 @@ npm run build 2>&1 | tee build.log
 
 **Debug steps:**
 1. Inspect element in DevTools
-2. Check if SCSS compiled to CSS
-3. Verify class names match between JS and SCSS
-4. Check import paths in SCSS files
+2. Confirm component CSS files are imported (one per component)
+3. Verify class names match between JS and CSS selectors
+4. Ensure `@layer` blocks exist only once per selector to avoid Tailwind drops
 
 **Common issues:**
-- **Styles not loaded** - Missing `import "./Component.scss"`
-- **Global colors not working** - Incorrect `@import` path to `_globalColor.scss`
-- **Responsive breakpoints** - Check media queries in SCSS
+- **Styles not loaded** - Missing `import "./Component.css"`
+- **Global colors not working** - CSS variables not updated in `src/index.css`
+- **Responsive breakpoints** - Confirm media queries live in the correct CSS file (`@layer components`)
 
 ### Dark Mode Not Working
 
@@ -1321,7 +1335,7 @@ Allow: /
 - Cleaner, modern aesthetic
 - Simplified component structure
 - Enhanced visual design
-- Design tokens in `_variables.scss`
+- Design tokens in `styles/global.css`
 
 ---
 
@@ -1330,7 +1344,7 @@ Allow: /
 ### Official Documentation
 - **React 16 Docs:** https://legacy.reactjs.org/docs/
 - **React Router v5:** https://v5.reactrouter.com/
-- **SASS:** https://sass-lang.com/
+- **Tailwind CSS v4:** https://tailwindcss.com/docs
 - **Create React App:** https://create-react-app.dev/
 
 ### External Integrations
@@ -1341,7 +1355,7 @@ Allow: /
 
 ### Useful Tools
 - **Prettier Playground:** https://prettier.io/playground/
-- **SCSS to CSS Converter:** https://www.sassmeister.com/
+- **Tailwind Play:** https://play.tailwindcss.com/
 - **React DevTools:** Browser extension for debugging
 
 ---
@@ -1359,7 +1373,7 @@ Allow: /
 ### "GitHub projects not updating"
 
 **Solution:**
-1. Check `.env` has valid `REACT_APP_GITHUB_TOKEN`
+1. Check `.env` has valid `VITE_GITHUB_TOKEN`
 2. Run `node fetch.js`
 3. Check `/public/profile.json` has new data
 4. Rebuild: `npm run build`

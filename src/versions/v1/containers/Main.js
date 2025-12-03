@@ -19,7 +19,7 @@ import SplashScreen from "./splashScreen/SplashScreen";
 import {splashScreen} from "../../../shared/data/portfolio";
 import {StyleProvider} from "../../../shared/contexts/StyleContext";
 import {useLocalStorage} from "../../../shared/hooks/useLocalStorage";
-import "./Main.scss";
+import "./Main.css";
 
 const Main = () => {
   const darkPref = window.matchMedia("(prefers-color-scheme: dark)");

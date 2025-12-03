@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { bigProjects } from "../../../../shared/data/portfolio";
-import "./Portfolio.scss";
+import "./Portfolio.css";
 
 const Portfolio = () => {
   const [activeSlide, setActiveSlide] = useState(0);

@@ -1,5 +1,5 @@
 import React from "react";
-import "./SocialMedia.scss";
+import "./SocialMedia.css";
 import {socialMediaLinks} from "../../../../shared/data/portfolio";
 
 export default function socialMedia() {

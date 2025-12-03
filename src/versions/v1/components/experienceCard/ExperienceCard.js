@@ -1,5 +1,5 @@
 import React, {useState, createRef} from "react";
-import "./ExperienceCard.scss";
+import "./ExperienceCard.css";
 import ColorThief from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./Achievement.scss";
+import "./Achievement.css";
 import AchievementCard from "../../components/achievementCard/AchievementCard";
 import {achievementSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";

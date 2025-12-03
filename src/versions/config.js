@@ -15,7 +15,7 @@
  * - /v3 → Version 3 (future versions)
  */
 
-export const DEFAULT_VERSION = "v2";
+export const DEFAULT_VERSION = "v1";
 
 /**
  * Version Registry

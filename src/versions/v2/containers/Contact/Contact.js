@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { contactInfo } from "../../../../shared/data/portfolio";
-import "./Contact.scss";
+import "./Contact.css";
 
 const Contact = () => {
   const [email, setEmail] = useState("");

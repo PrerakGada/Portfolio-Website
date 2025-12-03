@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from "react";
-import "./Blog.scss";
+import "./Blog.css";
 import BlogCard from "../../components/blogCard/BlogCard";
 import {blogSection} from "../../../../shared/data/portfolio";
 import {Fade} from "react-reveal";

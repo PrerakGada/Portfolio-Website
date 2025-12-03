@@ -1,0 +1,37 @@
+@layer components {
+  .achievement-heading {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .achievement-subtitle {
+    text-transform: uppercase;
+    margin: 0 0 50px;
+  }
+
+  .subTitle,
+  .achievement-subtitle {
+    color: var(--color-subtitle);
+  }
+
+  @media (max-width: 1380px) {
+    .achievement-heading {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .achievement-heading {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .achievement-subtitle {
+      font-size: 16px;
+      line-height: normal;
+      text-align: center;
+    }
+  }
+}
